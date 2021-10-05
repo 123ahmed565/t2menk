@@ -67,14 +67,103 @@ a {
         width: 100%;
       }
 
+      /* start preloader */
+.loader_bg{
+  position: fixed;
+  z-index: 999999;
+  background: var(--primary);
+  width: 100%;
+  height: 100%;
+
+}
+
+.loader{
+  border:  0 solid transparent;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: calc(50vh - 75px);
+  left: calc(50vw - 75px);
+} 
+
+.loader:before, .loader:after{
+  content: '';
+  border: 1em solid white;
+  border-radius: 50%;
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: loader 2s linear infinite;
+  opacity: 0;
+}
+
+.loader:before{
+  animation-delay: .5s;
+}
+
+@keyframes loader {
+  0%{
+      transform: scale(0);
+      opacity: 0;
+  }
+
+  50%{
+      opacity: 1;
+  }
+
+  100%{
+      transform: scale(1);
+      opacity: 0;
+  }
+}
+/* end preloder */
+
+
+
+/* start top button */
+.scroll-to-top{
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  color: white;
+  background:var(--secondary);  
+  border: none;  
+  transition-duration: 500ms;
+}
+
+.scroll-to-top:hover{
+  background: black;
+}
+
+@media (max-width:768px) {
+  .scroll-to-top{
+      right: 20px;
+      bottom: 60px;
+      width: 40px;
+      height: 40px;
+  }
+}
+/* end top button */
+
+      
+
 
 /* start header */
 .navbar{
     font-size: 16px;
-    padding: 15px;
+    padding: 5px;
+    background-color: #ffffff;
     /* position: fixed;
     z-index: 4000;
     width: 100%;
+    top: 0px;
     background-color: white;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, .15); */
 }
@@ -166,7 +255,7 @@ a {
 /* start for section1 */
 
   .section1{
-    margin-top: 45px;
+    margin-top: 170px;
   }
 
   .section1 h1{
@@ -606,6 +695,43 @@ font-weight: 400;
   color: #666666;
 }
 /* end t2men mmtlkat */
+
+/* start t2men safr */
+.t2men-safr h3{
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--secondary);
+}
+
+.t2men-safr h4{
+  font-size: 16px;
+  line-height: 34px;
+  color: #222222;
+  font-weight: 700;
+}
+
+.t2men-safr h5{
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #666666;
+}
+
+.t2men-safr h2{
+font-size: 26px;
+line-height: 32px;
+color: #222222;
+font-weight: 700;
+}
+
+.t2men-safr ul li{
+  font-size: 16px;
+  color: #666666;
+  font-weight: 700;
+  padding: 15px;
+}
+
+/* end t2men safr */
 
 
 

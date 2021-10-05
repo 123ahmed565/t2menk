@@ -12,6 +12,16 @@
 </head>
 <body>
 
+    <!-- start preloader -->
+    <div class="loader_bg">
+      <div class="loader"></div>
+    </div>
+  <!-- end preloader  -->
+
+  <!-- to top -->
+<button class="scroll-to-top"><i class="fa fa-chevron-up"></i></button>
+<!-- end to top -->
+
     <!-- start header -->
     <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
@@ -34,7 +44,7 @@
                 <div class="dropdown-content">
                   <a href="./t2men-cars.html">تأمين السيارات</a>
                   <a href="#">تأمين طبي</a>
-                  <a href="#">تأمين السفر</a>
+                  <a href="./t2men-safr.html">تأمين السفر</a>
                   <a href="./t2men-mmtlkat.html">تأمين الممتلكات</a>
                   <a href="./t2men-7yah.html">تأمين الحياة</a>
                 </div>
@@ -59,16 +69,16 @@
   </div>
   <form action="#">
     <label for="name">الاسم</label>
-    <input type="text" id="name" name="firstname" placeholder="اسمك..">
+    <input type="text" id="name" name="firstname" placeholder="اسمك.." required>
 
     <label for="number">رقم الهاتف</label>
-    <input type="tel" id="tel" name="tel" placeholder="رقم موبايل">
+    <input type="tel" id="tel" name="tel" placeholder="رقم موبايل" required>
 
     <label for="email">(البريد الالكتروني (إختياري</label>
-    <input type="email" id="lname" name="lastname" placeholder="ايميلك">
+    <input type="email" id="lname" name="lastname" placeholder="ايميلك" required>
 
     <label for="country">نوع التأمين</label>
-    <select id="country" name="country">
+    <select id="country" name="country" required>
       <option value="">----</option>
       <option value="" >تأمين السيارات</option>
       <option value="">تأمين طبى للافراد</option>
@@ -161,7 +171,7 @@
               <p class="text-center mt-2">
                   Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved Amanlek  
               </p>
-             <p class="text-center"><span> powered by <a href="#" target="_blank">ahmed serag</a> </span></p>
+             <p class="text-center"><span> powered by <a href="#" target="_blank">T2menk</a> </span></p>
           </div>
       </div>
   </div>
@@ -171,5 +181,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
 <script src="./js/main.js"></script>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-61557304f9644901"></script>
 </body>
 </html>
