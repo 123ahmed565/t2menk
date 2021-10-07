@@ -521,6 +521,10 @@ color: #666666;
 }
 /*end page question bardesy */
 /*start page  SHROT bardesy */
+.SHROT h4{
+  font-size:1.2rem;
+  color:var(--primary);
+}
 .SHROT li{
   text-decoration: none;
   color: #686368;
