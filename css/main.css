@@ -502,16 +502,11 @@ color: #666666;
 
 /*start page question bardesy */
 
-.q{
-  margin-right: 10%;
-  margin-left: 10%;
-  
-}
+
 .q li{
   text-decoration: none;
   color: var(--secondary);
 
-  margin: 2%;
   font-weight: bold;
   font-size:1.2rem;
   list-style-type: square;
@@ -528,15 +523,17 @@ color: #666666;
 /*start page  SHROT bardesy */
 .SHROT li{
   text-decoration: none;
-  color: var(--secondary);
-
-  margin: 2%;
+  color: #686368;
+  margin: 10px;
+  
   font-weight: bold;
-  font-size:1.2rem;
+  font-size:1rem;
   
 }
 
 .SHROT ul ul li{
+  margin: 5px;
+  font-size:.8rem;
   list-style-type: none;
   color:#666666 !important;
 
@@ -548,21 +545,37 @@ color: #666666;
   text-decoration: none;
   color: var(--secondary);
 
-  margin: 2%;
   font-weight: bold;
-  font-size:1.4rem;
-
+  font-size:1rem;
+  
   list-style-type: none;
+  padding:2px;
   
 }
 
 .seasah ul ul li{
+  font-size:.8rem;
   list-style-type: none;
   color:#666666 !important;
 
 }
 
 /*end page seasah bardesy */
+/*start page insurance bardesy */
+.insurance h4{
+  color:var(--primary);
+  font-size: 1rem;
+
+}
+.insurance p{
+  color:#666;
+  font-size: .8rem;
+
+}
+
+
+/*end page insurance bardesy */
+
 
 /* start page contact us bardesy */
 
