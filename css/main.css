@@ -67,6 +67,19 @@ a {
         width: 100%;
       }
 
+
+
+      /* start scroll behaviour */
+      ::-webkit-scrollbar{
+        width: 12px;
+    }
+    
+    ::-webkit-scrollbar-thumb{
+        background:linear-gradient(transparent,var(--primary));
+        border-radius: 8px;
+    }
+      /* end scroll behaviour */
+
       /* start preloader */
 .loader_bg{
   position: fixed;
