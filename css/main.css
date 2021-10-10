@@ -922,14 +922,94 @@ font-weight: 700;
     font-size: 19px;
     color: #fff;
     background-color: var(--primary);
-    border: 1px solid black;
     border-radius: 20px/50px !important;
     text-decoration: none;
     cursor: pointer;
     transition: all 0.3s ease-out;
-    padding: 20px ;
+    padding: 15px ;
     display: block;
-    margin-top: 10px;
+    margin-top: 15px 45px;
+    width: 100%;
+    margin-top: 50px;
+    border: none;
+  }
+}
+
+
+/* part two */
+.part-two h2{
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 34px;
+  color: var(--primary);
+}
+
+.part-two h3{
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 34px;
+  color: #222222;
+}
+
+.part-two p{
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #666666;
+}
+
+.part-two span{
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 25px;
+  color: #222222;
+}
+
+.part-two li {
+  font-size: 16px;
+  font-weight: 400;
+  color: #666666;
+  padding: 10px;
+  margin-top: 5px;
+}
+
+.part-two h4{
+  font-size: 23px;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 34px;
+  margin-top: 25px;
+}
+
+.part-two th{
+  font-size: 16px;
+  color: #666666;
+  font-weight: 700;
+}
+
+.part-two td{
+  font-size: 16px;
+  font-weight: 400;
+  color: #666666;
+}
+
+.part-two h5{
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 28px;
+}
+
+.part-two h6{
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 28px;
+}
+
+@media (min-width:768px) {
+  .table{
     width: 100%;
   }
 }
