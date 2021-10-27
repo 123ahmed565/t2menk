@@ -1015,6 +1015,110 @@ font-weight: 700;
 }
 /* end t2men teby */
 
+/* start offers person */
+.offer-person .box {
+  width: 40%;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.2);
+  padding: 35px;
+  border: 2px solid #fff;
+  border-radius: 20px/50px;
+  background-clip: padding-box;
+  text-align: center;
+}
+
+.offer-person .button {
+  font-size: 30px;
+  color: #fff;
+  background-color: var(--primary);
+  border: 1px solid black;
+  border-radius: 20px/50px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  padding: 20px ;
+  display: block;
+  margin-top: 30px;
+  border: none;
+}
+.offer-person .button:hover {
+  background: var(--secondary);
+}
+
+.offer-person .overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.offer-person .overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.offer-person .popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 40%;
+  position: relative;
+  transition: all 2s ease-in-out;
+}
+
+.offer-person .popup h4 {
+  margin-top: 40px !important;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.offer-person .popup .close {
+  position: absolute;
+  top: 10px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 40px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.offer-person .popup .close:hover {
+  color: var(--primary  );
+}
+.offer-person .popup .content {
+  max-height: 50%;
+  overflow: auto;
+}
+
+@media screen and (max-width: 768px){
+  .offer-person  .box{
+    width: 70%;
+  }
+  .offer-person .popup{
+    width: 80%;
+  }
+  .offer-person .button {
+    font-size: 19px;
+    color: #fff;
+    background-color: var(--primary);
+    border-radius: 20px/50px !important;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    padding: 15px ;
+    display: block;
+    margin-top: 15px 45px;
+    width: 100%;
+    margin-top: 50px;
+    border: none;
+  }
+}
+/* end offers person */
+
 
 
 
