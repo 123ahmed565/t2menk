@@ -262,6 +262,28 @@ a {
 /*-------------- drop down------------ */
 /* End header */
 
+/* start slider */
+.carousel-item img{
+  height: 500px
+}
+
+@media (max-width:768px) {
+  .carousel-item img{
+      max-width: 100%;
+      height: 200px;
+  }
+}
+/* .carousel-item .overlay{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0,.6);
+  z-index: 2;
+} */
+/* end slider */
+
 
 
 
@@ -284,6 +306,13 @@ a {
     font-weight: 700;
   }
 
+  .section1 img{
+    margin-top: 45px;
+    border-radius: 50%;
+    border: 2px solid var(--primary);
+    padding: 10px;
+  }
+
   .section1 .row{
     margin-top: 15px;
   }
@@ -296,11 +325,12 @@ a {
     width: 40%;
     margin: 0 auto;
     background: rgba(255,255,255,0.2);
-    padding: 35px;
+    /* padding: 35px; */
     border: 2px solid #fff;
     border-radius: 20px/50px;
     background-clip: padding-box;
     text-align: center;
+    
   }
   
   .section1 .button {
@@ -564,15 +594,15 @@ color: #666666;
   color: var(--secondary);
 
   font-weight: bold;
-  font-size:1rem;
+  font-size:1.2rem;
   
   list-style-type: none;
-  padding:2px;
+  padding:7px;
   
 }
 
 .seasah ul ul li{
-  font-size:.8rem;
+  font-size:16px;
   list-style-type: none;
   color:#666666 !important;
 
@@ -1094,6 +1124,33 @@ font-weight: 700;
   overflow: auto;
 }
 
+.offer-person .btn{
+background-color: var(--primary);
+margin-bottom: 20px;
+color: white;
+font-weight: bold;
+}
+
+.offer-person h2{
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.offer-person .p1{
+  color: var(--secondary);
+  font-size: 21px;
+}
+
+label{
+  color: #666666;
+}
+
+input{
+  border: 1px solid var(--primary);
+  padding: 10px;
+  margin: 5px;
+}
+
 @media screen and (max-width: 768px){
   .offer-person  .box{
     width: 70%;
@@ -1119,6 +1176,23 @@ font-weight: 700;
 }
 /* end offers person */
 
+/* start offer company */
+.media-object{
+  border-radius: 50% !important;
+  border:1px solid var(--primary);
+}
+
+.offer-company h1{
+  color: var(--primary);
+  font-weight: 600;
+  line-height: 30px;
+}
+
+.offer-company h4{
+  /* background-color: var(--primary); */
+  padding: 10px;
+}
+/* end offer company */
 
 
 
