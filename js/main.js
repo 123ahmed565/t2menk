@@ -63,3 +63,15 @@ if(document.documentElement.scrollTop <=100){
 }
 });
 
+
+// swiper for slider home page
+var swiper = new Swiper(".mySwiper", {
+  loop:true,
+  autoplay:true,
+  grabCursor: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+});
+
