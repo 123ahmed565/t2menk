@@ -184,6 +184,8 @@ a {
 }
 .navbar{
   background-color: var(--primary) !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 
 
@@ -287,7 +289,6 @@ a {
   text-align: center;
   font-size: 18px;
   background: #fff;
-
   /* Center slide text vertically */
   display: -webkit-box;
   display: -ms-flexbox;
@@ -304,10 +305,14 @@ a {
 }
 
 .swiper-slide img {
-  display: block;
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
+  height: 350px
+}
+
+@media (max-width:768px) {
+  .swiper-slide img {
+    max-width: 100%;
+    height: 200px;
+  }
 }
 /* end slider */
 
@@ -400,8 +405,21 @@ a {
     background: #fff;
     border-radius: 5px;
     width: 40%;
+    top: 50px !important;
     position: relative;
     transition: all 2s ease-in-out;
+  }
+
+  .section1 .popup button{
+    background-color: var(--primary);
+    padding: 20px 34px;
+    box-shadow: 4px 8px 15px rgb(0 0 0 / 10%);
+    border-radius: 20px;
+    border: none;
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 24px;
   }
   
   .section1 .popup h4 {
@@ -411,20 +429,21 @@ a {
   }
   .section1 .popup .close {
     position: absolute;
-    top: 10px;
-    right: 30px;
+    top: 15px;
+    left: 20px;
     transition: all 200ms;
     font-size: 40px;
     font-weight: bold;
     text-decoration: none;
-    color: #333;
+    color: var(--primary);
   }
   .section1 .popup .close:hover {
-    color: var(--primary  );
+    color: black !important;
   }
   .section1 .popup .content {
     max-height: 50%;
-    overflow: auto;
+    overflow: hidden !important;
+    border-radius: 5%;
   }
   
   @media screen and (max-width: 768px){
@@ -692,7 +711,7 @@ input[type=text],input[type=tel],input[type=email], select, textarea {
 }
 
 
-input[type=submit] {
+input[type=ارسال] {
   background-color: var(--primary);
   color: white;
   display: block;
@@ -705,7 +724,7 @@ input[type=submit] {
 }
 
 
-input[type=submit]:hover {
+input[type=ارسال]:hover {
   background-color: var(--secondary);
 }
 
@@ -939,33 +958,34 @@ font-weight: 700;
   margin: 70px auto;
   padding: 20px;
   background: #fff;
-  border-radius: 5px;
+  border-radius: 5%;
+  top: 50px;
   width: 40%;
   position: relative;
   transition: all 2s ease-in-out;
 }
 
 .t2men-teby .popup h4 {
-  margin-top: 40px !important;
+  margin-top: 50px !important;
   color: #333;
   font-family: Tahoma, Arial, sans-serif;
 }
 .t2men-teby .popup .close {
   position: absolute;
-  top: 10px;
-  right: 30px;
+  top: 15px;
+  left: 20px;
   transition: all 200ms;
   font-size: 40px;
   font-weight: bold;
   text-decoration: none;
-  color: #333;
+  color: var(--primary);
 }
 .t2men-teby .popup .close:hover {
-  color: var(--primary  );
+  color: black;
 }
 .t2men-teby .popup .content {
   max-height: 50%;
-  overflow: auto;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 768px){
@@ -1173,9 +1193,10 @@ label{
 }
 
 input{
-  border: 1px solid var(--primary);
+  border: 1px solid var(--primary) !important;
   padding: 10px;
   margin: 5px;
+  width: 90% !important;
 }
 
 @media screen and (max-width: 768px){
@@ -1220,6 +1241,19 @@ input{
   padding: 10px;
 }
 /* end offer company */
+
+
+.btn-1{
+  background-color: var(--primary);
+  padding: 20px 34px;
+  box-shadow: 4px 8px 15px rgb(0 0 0 / 10%);
+  border-radius: 20px;
+  border: none;
+  color: white;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 24px;
+}
 
 
 
