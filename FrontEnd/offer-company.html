@@ -99,42 +99,80 @@
                 </div>
               </div>
 
-              <!-- <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-                <div class="modal-dialog modal-dialog-centered">
+              <div class="row mx-auto d-block">
+                <div class="col">
+<button type="button" class="btn btn-primary pe-5 ps-5 border-0 p-3" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo" style="background-color: var(--primary);color:white;">الموظفين + الاسر</button>
+                </div>
+                <div class="col mt-3">
+<button type="button" class="btn btn-primary pe-5 ps-5 border-0 p-3" data-bs-toggle="modal" data-bs-target="#exampleModal-2" data-bs-whatever="@mdo" style="background-color: var(--primary);color:white;"> الموظفين بس</button>
+                </div>
+              </div>
+              <!-- start modal popup 1 -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">سجل الان</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="margin-left: 0 !important;"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <!-- <label for="recipient-name" class="col-form-label">Recipient:</label> -->
+            <input type="text" class="form-control w-100" id="name" placeholder="الاسم *">
+          </div>
+          <div class="mb-3">
+            <!-- <label for="recipient-name" class="col-form-label">Recipient:</label> -->
+            <input type="tel" class="form-control w-100" id="mobile-number" placeholder="عدد الموظفين  *">
+          </div>
+          <div class="mb-3">
+            <!-- <label for="recipient-name" class="col-form-label">Recipient:</label> -->
+            <input type="tel" class="form-control w-100" id="mobile-number" placeholder="اجمالى عدد افراد الاسر   *">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+        <button type="button" class="btn pe-5 ps-5 mx-auto d-block" style="background-color: var(--primary);color:white;">ارسال</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+              <!-- start modal popup 2 -->
+              <div class="modal fade" id="exampleModal-2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalToggleLabel">التسجيل</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      <h5 class="modal-title" id="exampleModalLabel">سجل الان</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="margin-left: 0 !important;"></button>
                     </div>
                     <div class="modal-body">
-                     <input type="text" name="" id="" placeholder="اسمك *" required>
+                      <form>
+                        <div class="mb-3">
+                          <input type="text" class="form-control w-100" id="name" placeholder="عدد الموظفين *" required>
+                        </div>
+                        <div class="mb-3">
+                          <input type="tel" class="form-control w-100" id="mobile-number" placeholder="رقم الموبايل *" required>
+                        </div>
+                        <div class="mb-3">
+                          <input type="tel" class="form-control w-100" id="mobile-number" placeholder="الايميل  *" required>
+                        </div>
+                      </form>
                     </div>
                     <div class="modal-footer">
-                      <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" data-bs-dismiss="modal">التالي</button>
+                      <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+                      <button type="button" class="btn pe-5 ps-5 mx-auto d-block" style="background-color: var(--primary);color:white;">ارسال</button>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
-                <div class="modal-dialog modal-dialog-centered">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalToggleLabel2">تابع</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      <div class="row">
-                          <input type="button" value="الموظفين + الاسر" class="w-50 mx-auto d-block">
-                          <input type="button" name="" id="" value="الموظفين بس" class="w-50 mx-auto d-block">
-                      </div>
-                    </div>
-                    <div class="modal-footer">
-                      <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal" data-bs-dismiss="modal">Back to first</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button">سجل الان</a> -->
+
+
+
     </div>
 </div>
 <!-- end offer company -->
