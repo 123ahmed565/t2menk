@@ -146,13 +146,14 @@ a {
   height: 50px;
   font-size: 20px;
   color: white;
-  background:var(--secondary);  
-  border: none;  
+  background:var(--primary);  
+  border: 1px solid var(--secondary);  
   transition-duration: 500ms;
 }
 
 .scroll-to-top:hover{
-  background: black;
+  background:black;
+  color: white;
 }
 
 @media (max-width:768px) {
