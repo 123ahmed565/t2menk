@@ -26,7 +26,7 @@ const userSchema = new mongoose.Schema({
     type: {
         type: String,
         required: [true," dif type"],
-        enum: ["Property Insurance","life Insurance","travel Insurance's","car Insurance","medical Insurance individual","medical Insurance company","customer service"]
+        enum: ["Property Insurance","life Insurance","travel Insurance's","car Insurance","medical Insurance individual","medical Insurance company","customer service","Report an accident"]
     },
     message: {
         type: String,
