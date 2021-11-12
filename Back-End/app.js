@@ -2,6 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 const ErrorHandler = require('./utils/ErrorHandler');
 
+
 const path = require('path');
 const {
   handleCastError,
@@ -23,15 +24,13 @@ app.use(morgan('dev'));
 
 
 app.use(express.json());
-// app.use(cookieParser());
 app.use(express.urlencoded());
 // app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
 app.use(cors({ credentials: true }));
-app.use(express.static(`${__dirname}/assets`));
-app.use(express.static('public'));
-// app.use(authJwt());
+app.use(express.static(path.join(`${__dirname}/assets`)));
 
-// app.use(errorHandler);
+app.use(express.static('public'));
+
 
 // Routess
 const usersRoutes = require('./routes/users');
@@ -48,6 +47,15 @@ const carinsurance = require('./routes/carinsurance');
 app.use('/api/v1/users', usersRoutes);
 app.use('/api/v1/carinsurance', carinsurance );
 
+
+
+// handel view 
+app.get('/home',(req, res) => {
+  res.sendFile(path.join(__dirname,"/views/index.html"))
+})
+app.get('/contactus',(req, res) => {
+  res.sendFile(path.join(__dirname,"/views/contactus.html"))
+})
 
 // Handle any other route
 
