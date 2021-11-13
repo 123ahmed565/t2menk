@@ -70,19 +70,19 @@
   <nav class="navbar navbar-expand-sm shadow-sm bg-white rounded sticky-top">
     <div class="container">
         <i class="fas fa-bars  fa-2x mt-3 mr-3" data-bs-toggle="offcanvas" data-bs-target="#demo"></i>
-        <a href="./index.html"> <img class="logo-navbar" src="./images/corp_group.png" width="60" height="60" alt="Image logo" loading="lazy"> </a>
+        <a href="/"> <img class="logo-navbar" src="./images/corp_group.png" width="60" height="60" alt="Image logo" loading="lazy"> </a>
         <div class="offcanvas offcanvas-end" id="demo">
             <div class="offcanvas-header">
-                <h1 class="offcanvas-title"><a href="./index.html"> <img src="./images/corp_group.png" width="80" height="80" alt="Image off menu canvas" loading="lazy"></a></h1>
+                <h1 class="offcanvas-title"><a href="/"> <img src="./images/corp_group.png" width="80" height="80" alt="Image off menu canvas" loading="lazy"></a></h1>
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
             </div>
             <div class="offcanvas-body col justify-content-md-between">
                 <ul class="navbar-nav">
                     <li class="nav-item ">
-                        <a class="nav-link" href="./index.html">الرئيسية</a>
+                        <a class="nav-link" href="/">الرئيسية</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./3an-aman-lek.html">من نحن</a>
+                        <a class="nav-link" href="/whoUs">من نحن</a>
                     </li>
                     <!-- <li class="nav-item">
                         <a class="nav-link" href="./blog.html">Blog</a>
@@ -90,18 +90,18 @@
                     <div class="dropdown">
                       <a href="./anwa3-t2men.html"><p class="dropbtn" style="color:var(--primary);">انواع التأمين</p></a>
                       <div class="dropdown-content">
-                        <a href="./t2men-cars.html">تأمين السيارات</a>
-                        <a href="./t2men-teby.html">تأمين طبي</a>
-                        <a href="./t2men-safr.html">تأمين السفر</a>
-                        <a href="./t2men-mmtlkat.html">تأمين الممتلكات</a>
-                        <a href="./t2men-7yah.html">تأمين الحياة</a>
+                        <a href="/carInsurance">تأمين السيارات</a>
+                        <a href="/medicalInsurance">تأمين طبي</a>
+                        <a href="/travelInsurance">تأمين السفر</a>
+                        <a href="/propertyInsurance">تأمين الممتلكات</a>
+                        <a href="/lifeInsurance">تأمين الحياة</a>
                       </div>
                     </div>
                     <!-- <li class="nav-item">
                         <a class="nav-link" href="./questions.html">الاسئله الشائعة </a>
                     </li> -->
                     <li class="nav-item">
-                        <a class="nav-link" href="./contactus.html">اتصل بنا</a>
+                        <a class="nav-link" href="/contactus">اتصل بنا</a>
                     </li>
                 </ul>
                 <!-- <button class="btn mt-3 mt-md-0">Appointment</button> -->
@@ -113,9 +113,9 @@
 
 <!-- start contact us -->
 <div class="container">
-  <div class="image">
+  <!-- <div class="image">
     <img class="img-responsive" src="./images/contact-us-.png" alt="image for contact" loading="lazy">
-  </div>
+  </div> -->
 
   <div class="row mt-5">
     <div class="col-md-8 col-sm-12 form-contact">
@@ -144,8 +144,10 @@
         <!-- <label for="subject">الرساله</label> -->
         <textarea id="subject" style="width:90%;border:1px solid var(--primary);height:150px" name="message" placeholder=".......الرساله" style="height:150px"></textarea>
     
-        <button type="submit"  class="text-center btn btn-primary"  >ارسال</button>
-    
+        
+        <!-- <button type="submit"  class="text-center btn "  >ارسال</button> -->
+      <input type="submit"class="text-center submit" value="ارسال" >
+
       </form>
       <p id="error" style="color:red"></p>
     </div>
@@ -176,11 +178,11 @@
                   <div class="col-lg-6 ml-auto">
                       <h2 class="footer-heading border-bottom w-25  mb-2">الشركة</h2>
                       <ul class="list-unstyled">
-                        <li><a href="3an-aman-lek.html">من نحن</a></li>
-                        <li><a href="al4rot-we-alafkam.html">الشروط و الاحكام</a></li>
-                          <li><a href="seah-il.html">سياسة الخصوصية</a></li>
-                          <li><a href="insurance-companies.html">شركات التأمين</a></li>
-                          <li><a href="get-jop.html">وظائف - لدينا فرص عمل !</a></li>
+                        <li><a href="/whoUs">من نحن</a></li>
+                        <li><a href="/termsAndCondition">الشروط و الاحكام</a></li>
+                          <li><a href="/privacyPolicy">سياسة الخصوصية</a></li>
+                          <li><a href="/insurancecompany">شركات التأمين</a></li>
+                          <li><a href="/jobVacancies">وظائف - لدينا فرص عمل !</a></li>
                         </ul>
                   </div>
                   <div class="icons col-lg-6">
