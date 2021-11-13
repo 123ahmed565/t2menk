@@ -19,6 +19,8 @@
 <meta property="og:type" content="Service"/>
 <meta name="og:postal-code" content="12573"/>
 <meta name="og:country-name" content="Egypt"/>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" href="./css/main.css">
@@ -118,7 +120,9 @@
   <div class="row mt-5">
     <div class="col-md-8 col-sm-12 form-contact">
       <p class="text-center">برجاء إدخال البيانات بالأسفل وسيقوم أحد ممثلينا بالإتصال بكم</p>
-      <form action="http://localhost:3000/api/v1/users" method="post" id="contact-us-form" class="">
+   
+   
+      <form method="post"   id="contact-us-form" class="">
         <!-- <label for="name">الاسم</label> -->
         <input type="text" id="name" name="name" placeholder="اسمك.." required>
     
@@ -140,7 +144,7 @@
         <!-- <label for="subject">الرساله</label> -->
         <textarea id="subject" style="width:90%;border:1px solid var(--primary);height:150px" name="message" placeholder=".......الرساله" style="height:150px"></textarea>
     
-        <button type="submit"  class="text-center btn btn-primary">ارسال</button>
+        <button type="submit"  class="text-center btn btn-primary"  >ارسال</button>
     
       </form>
       <p id="error" style="color:red"></p>
@@ -209,22 +213,39 @@
 
 <script>
 const contactusform= document.getElementById("contact-us-form");
+
 const phone=document.getElementById("phone");
 const error=document.getElementById("error");
-contactusform.addEventListener('submit',function(e){
-  let mobileValid =/^(010 || 012 || 011|| 015)[0-9]{11}$/.test(phone.value)
 
+contactusform.addEventListener('submit',async function(e){
+  e.preventDefault();
 
-if(mobileValid&&phone.value.length === 11){
-}
-  else{
-
-    e.preventDefault();
-    error.innerText="eg mob"
-
-  }
-
+  const formdata=new FormData(contactusform)
+  const formdatasec=Object.fromEntries(formdata);
   
+  
+  
+  
+  try{
+    let response = await axios.post('api/v1/users', 
+      formdatasec
+          ,
+           
+ 
+  );
+    // let response1 = await axios.get('api/v1/users',  {
+  // });
+
+    const json=await response;
+    // const json1=await response1;
+    console.log(json);
+    // console.log(json1);
+    
+  }
+  catch(e){
+    console.log(e);
+  } 
+  alert("asd")
 })
 </script>
 

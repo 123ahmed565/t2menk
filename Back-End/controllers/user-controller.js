@@ -40,14 +40,16 @@ const getUser = catchAsyncError(async (req, res, next) => {
 
 // register a new type
 const userObject = (req) => {
-  console.log(req.body);
-
- 
-let userInfo = req.body;
-return userInfo;
+  
+  console.log(req,"assssssssssssssssssssssssaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadddddddddddd");
+  
+  let userInfo = req;
+  return userInfo;
 };
+
 const createUser = catchAsyncError(async (req, res, next) => {
-  let userObj = userObject(req);
+  console.log(req.body,"assdd");
+  let userObj = userObject(req.body);
   
   
   const user = await new User(userObj);
@@ -67,7 +69,7 @@ const updateUser = catchAsyncError(async (req, res, next) => {
  
 
 
-  let userObj = userObject(req);
+  let userObj = userObject(req.body);
 
 
   //TODO WHEN WORKING DAYS CAHNGE ==> HANDLE FUTURE PRERESERVED APPOINTMENTS

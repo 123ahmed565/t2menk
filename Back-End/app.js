@@ -53,8 +53,54 @@ app.use('/api/v1/carinsurance', carinsurance );
 app.get('/home',(req, res) => {
   res.sendFile(path.join(__dirname,"/views/index.html"))
 })
+app.get('/',(req, res) => {
+  res.sendFile(path.join(__dirname,"/views/index.html"))
+})
 app.get('/contactus',(req, res) => {
   res.sendFile(path.join(__dirname,"/views/contactus.html"))
+})
+
+app.get('/mena7na',(req, res) => {
+  res.sendFile(path.join(__dirname,"/views/3an-aman-lek.html"));
+})
+app.get('/anwa3t2men',(req, res) => {
+  res.sendFile(path.join(__dirname,"/views/anwa3-t2men.html"));
+})
+app.get('/t2mencars',(req, res) => {
+  res.sendFile(path.join(__dirname,"/views/t2men-cars.html"));
+})
+app.get('/t2menmmtalkt',(req, res) => {
+  res.sendFile(path.join(__dirname,"/views/t2men-mmtlkat.html"));
+})
+app.get('/t2men7yah',(req, res) => {
+  res.sendFile(path.join(__dirname,"/views/t2men-7yah.html"));
+})
+app.get('/t2mensafr',(req, res) => {
+  res.sendFile(path.join(__dirname,"/views/t2men-safr.html"));
+})
+app.get('/t2menteby',(req, res) => {
+  res.sendFile(path.join(__dirname,"/views/t2men-teby.html"));
+})
+app.get('/siasatalkhususia',(req, res) => {
+  res.sendFile(path.join(__dirname,"/views/seah-il.html"));
+})
+app.get('/offersperson',(req, res) => {
+  res.sendFile(path.join(__dirname,"/views/offers-person.html"));
+})
+app.get('/offercompany',(req, res) => {
+  res.sendFile(path.join(__dirname,"/views/offer-company.html"));
+})
+app.get('/insuranceproducts',(req, res) => {
+  res.sendFile(path.join(__dirname,"/views/insurance-products.html"));
+})
+app.get('/insurancecompany',(req, res) => {
+  res.sendFile(path.join(__dirname,"/views/insurance-companies.html"));
+})
+app.get('/getjob',(req, res) => {
+  res.sendFile(path.join(__dirname,"/views/get-jop.html"));
+})
+app.get('/alshurutwalahkam',(req, res) => {
+  res.sendFile(path.join(__dirname,"/views/al4rot-we-alafkam.html"));
 })
 
 // Handle any other route
