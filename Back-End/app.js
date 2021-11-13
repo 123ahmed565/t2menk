@@ -50,38 +50,38 @@ app.use('/api/v1/carinsurance', carinsurance );
 
 
 // handel view 
-app.get('/home',(req, res) => {
+app.get('/',(req, res) => {
   res.sendFile(path.join(__dirname,"/views/index.html"))
 })
-app.get('/',(req, res) => {
+app.get('/home',(req, res) => {
   res.sendFile(path.join(__dirname,"/views/index.html"))
 })
 app.get('/contactus',(req, res) => {
   res.sendFile(path.join(__dirname,"/views/contactus.html"))
 })
 
-app.get('/mena7na',(req, res) => {
+app.get('/whoUs',(req, res) => {
   res.sendFile(path.join(__dirname,"/views/3an-aman-lek.html"));
 })
-app.get('/anwa3t2men',(req, res) => {
+app.get('/typeofInsurance',(req, res) => {
   res.sendFile(path.join(__dirname,"/views/anwa3-t2men.html"));
 })
-app.get('/t2mencars',(req, res) => {
+app.get('/carInsurance',(req, res) => {
   res.sendFile(path.join(__dirname,"/views/t2men-cars.html"));
 })
-app.get('/t2menmmtalkt',(req, res) => {
+app.get('/propertyInsurance',(req, res) => {
   res.sendFile(path.join(__dirname,"/views/t2men-mmtlkat.html"));
 })
-app.get('/t2men7yah',(req, res) => {
+app.get('/lifeInsurance',(req, res) => {
   res.sendFile(path.join(__dirname,"/views/t2men-7yah.html"));
 })
-app.get('/t2mensafr',(req, res) => {
+app.get('/travelInsurance',(req, res) => {
   res.sendFile(path.join(__dirname,"/views/t2men-safr.html"));
 })
-app.get('/t2menteby',(req, res) => {
+app.get('/medicalInsurance',(req, res) => {
   res.sendFile(path.join(__dirname,"/views/t2men-teby.html"));
 })
-app.get('/siasatalkhususia',(req, res) => {
+app.get('/privacyPolicy',(req, res) => {
   res.sendFile(path.join(__dirname,"/views/seah-il.html"));
 })
 app.get('/offersperson',(req, res) => {
@@ -96,10 +96,10 @@ app.get('/insuranceproducts',(req, res) => {
 app.get('/insurancecompany',(req, res) => {
   res.sendFile(path.join(__dirname,"/views/insurance-companies.html"));
 })
-app.get('/getjob',(req, res) => {
+app.get('/jobVacancies',(req, res) => {
   res.sendFile(path.join(__dirname,"/views/get-jop.html"));
 })
-app.get('/alshurutwalahkam',(req, res) => {
+app.get('/termsAndCondition',(req, res) => {
   res.sendFile(path.join(__dirname,"/views/al4rot-we-alafkam.html"));
 })
 
