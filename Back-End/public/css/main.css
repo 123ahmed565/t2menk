@@ -3,8 +3,10 @@
 
 
 :root {
-  --primary: #DAA520;
-  --secondary: #CD5C5C;
+  /* --primary: #DAA520; */
+  /* --secondary: #CD5C5C; */
+  --primary:#6982a2;
+  --secondary:#f3d6b1;
 }
 
 a {
