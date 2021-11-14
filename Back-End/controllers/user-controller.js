@@ -41,14 +41,12 @@ const getUser = catchAsyncError(async (req, res, next) => {
 // register a new type
 const userObject = (req) => {
   
-  console.log(req,"assssssssssssssssssssssssaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaadddddddddddd");
   
   let userInfo = req;
   return userInfo;
 };
 
 const createUser = catchAsyncError(async (req, res, next) => {
-  console.log(req.body,"assdd");
   let userObj = userObject(req.body);
   
   
@@ -62,6 +60,7 @@ const createUser = catchAsyncError(async (req, res, next) => {
       userName: newUser.name,
       userID: newUser.id,
     });
+    
 });
 
 // update type details

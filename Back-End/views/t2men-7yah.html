@@ -19,6 +19,10 @@
 <meta property="og:type" content="Service"/>
 <meta name="og:postal-code" content="12573"/>
 <meta name="og:country-name" content="Egypt"/>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" href="./css/main.css">
@@ -117,7 +121,7 @@
           <img class="img-responsive" src="./images/undraw_buy_house_560d-1.png" width="567" height="284" alt="">
         </div>
         <h1 class="text-center mt-3 mb-5">دخل بياناتك و هنتصل بيك نشرحلك كل العروض المتاحة</h1>
-        <form action="http://localhost:3000/api/v1/users" method="post"class="text-center">
+        <form  method="post" id="t2men-7yah"class="text-center">
           <!-- <label for="name">الاسم</label> -->
           <input type="text" id="name" class="w-80" name="name" placeholder="اسمك.." required>
       
@@ -129,13 +133,16 @@
           <select id="country" class="d-none" name="type" required>
             <option value="life Insurance"></option>
           </select>
-          <input type="submit" value="ارسال" class="text-center mx-auto d-block">
+          <input type="submit" value="ارسال" class="text-center mx-auto d-block submit">
       
         </form>
       </div>
     </div>
     <!-- end t2men 7yah -->
 
+
+
+    
 
 <!-- start footer -->
 <footer class="footer">
@@ -183,6 +190,41 @@
   </div>
 </footer>
 <!-- End footer -->
+
+<script>
+    const t2men7yahform= document.getElementById("t2men-7yah");
+
+    t2men7yahform.addEventListener('submit',async function(e){
+      e.preventDefault();
+    
+      const formdata=new FormData(t2men7yahform)
+      const formdatasec=Object.fromEntries(formdata);
+      
+      
+      
+      
+      try{
+        let response = await axios.post('api/v1/users', 
+          formdatasec
+              ,
+               
+     
+      );
+        // let response1 = await axios.get('api/v1/users',  {
+      // });
+    
+        const json=await response.data;
+        // const json1=await response1;
+        console.log(json);
+        // console.log(json1);
+        alert("added")
+      }
+      catch(e){
+        console.log(e);
+      } 
+    })
+    </script>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>

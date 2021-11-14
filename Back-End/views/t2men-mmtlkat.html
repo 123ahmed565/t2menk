@@ -19,6 +19,10 @@
 <meta property="og:type" content="Service"/>
 <meta name="og:postal-code" content="12573"/>
 <meta name="og:country-name" content="Egypt"/>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" href="./css/main.css">
@@ -133,7 +137,7 @@
         <select id="country" class="d-none" name="type" required>
             <option value="Property Insurance"></option>
           </select>
-        <input type="submit" value="ارسال" class="text-center mx-auto d-block" >
+          <input type="submit"class="text-center submit" value="ارسال" >
     
       </form>
 
@@ -190,6 +194,43 @@
   </div>
 </footer>
 <!-- End footer -->
+
+
+<script>
+    const t2menmmtalktform= document.getElementById("t2menmmtalkt");
+
+    t2menmmtalktform.addEventListener('submit',async function(e){
+      e.preventDefault();
+    
+      const formdata=new FormData(t2menmmtalktform)
+      const formdatasec=Object.fromEntries(formdata);
+      
+      
+      
+      
+      try{
+        let response = await axios.post('api/v1/users', 
+          formdatasec
+              ,
+               
+     
+      );
+        // let response1 = await axios.get('api/v1/users',  {
+      // });
+    
+        const json=await response.data;
+        // const json1=await response1;
+        console.log(json);
+        // console.log(json1);
+        alert("added")
+      }
+      catch(e){
+        console.log(e);
+      } 
+    })
+    </script>
+
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>

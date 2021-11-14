@@ -20,6 +20,9 @@
 <meta name="og:postal-code" content="12573"/>
 <meta name="og:country-name" content="Egypt"/>
 
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link
@@ -184,7 +187,7 @@ href="https://unpkg.com/swiper/swiper-bundle.min.css"
                 <h4>سجل بياناتك وهنتواصل معاك في أسرع وقت</h4>
                 <a class="close" href="#close">&times;</a>
                 <div class="content">
-                  <form action="http://localhost:3000/api/v1/users" method="post" >
+                  <form id="customerService" method="post" >
                     <label for="fname" class="mt-3">الاسم</label><br>
                         <input type="text" id="name2" name="name" placeholder="اسمك.." required>
                         <label for="lname">رقم الهاتف</label><br>
@@ -326,7 +329,8 @@ href="https://unpkg.com/swiper/swiper-bundle.min.css"
         <h4 class="text-center">سجل بياناتك وهنتواصل معاك في أسرع وقت</h4>
         <a class="close" href="#please-close">&times;</a>
         <div class="content text-center">
-          <form action="http://localhost:3000/api/v1/users" method="post" >
+
+          <form id="reportAnAccident" method="post" >
             <label for="fname" class="mt-3">الاسم</label><br>
                 <input type="text" id="name3" name="name" placeholder="اسمك.." required>
                 <label for="lname">رقم الهاتف</label><br>
@@ -336,6 +340,7 @@ href="https://unpkg.com/swiper/swiper-bundle.min.css"
                 </select>
                 <button type="submit" class="mx-auto d-block">ارسال</button>
               </form>
+
         </div>
     </div>
 </div>
@@ -388,6 +393,73 @@ href="https://unpkg.com/swiper/swiper-bundle.min.css"
     </div>
     </footer>
     <!-- End footer -->
+    <script>
+
+      const reportAnAccidentsform= document.getElementById("reportAnAccident");
+      const customerServiceform= document.getElementById("customerService");
+  
+      reportAnAccidentsform.addEventListener('submit',async function(e){
+        e.preventDefault();
+      
+        const formdata=new FormData(reportAnAccidentsform)
+        const formdatasec=Object.fromEntries(formdata);
+        
+        
+        
+        
+        try{
+          let response = await axios.post('api/v1/users', 
+            formdatasec
+                ,
+                 
+       
+        );
+          // let response1 = await axios.get('api/v1/users',  {
+        // });
+      
+          const json=await response.data;
+          // const json1=await response1;
+          console.log(json);
+          // console.log(json1);
+          alert("added")
+        }
+        catch(e){
+          console.log(e);
+        } 
+      })
+
+
+      customerServiceform.addEventListener('submit',async function(e){
+        e.preventDefault();
+      
+        const formdataa=new FormData(customerServiceform)
+        const formdataasec=Object.fromEntries(formdataa);
+        
+        
+        
+        
+        try{
+          let response = await axios.post('api/v1/users', 
+          formdataasec
+                ,
+                 
+       
+        );
+          // let response1 = await axios.get('api/v1/users',  {
+        // });
+      
+          const json=await response.data;
+          // const json1=await response1;
+          console.log(json);
+          // console.log(json1);
+          alert("added")
+        }
+        catch(e){
+          console.log(e);
+        } 
+      })
+
+      </script>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>

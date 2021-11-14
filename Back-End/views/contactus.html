@@ -19,6 +19,7 @@
 <meta property="og:type" content="Service"/>
 <meta name="og:postal-code" content="12573"/>
 <meta name="og:country-name" content="Egypt"/>
+
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
@@ -238,16 +239,16 @@ contactusform.addEventListener('submit',async function(e){
     // let response1 = await axios.get('api/v1/users',  {
   // });
 
-    const json=await response;
+    const json=await response.data;
     // const json1=await response1;
     console.log(json);
     // console.log(json1);
+    
     
   }
   catch(e){
     console.log(e);
   } 
-  alert("asd")
 })
 </script>
 
