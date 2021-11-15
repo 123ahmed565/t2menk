@@ -154,9 +154,6 @@
             data-bs-target="#exampleModal1" data-bs-whatever="@mdo"
             style="background-color: var(--primary);color:white;">الموظفين</button>
         </div>
-
-
-        
       </div>
       <!-- start modal popup 1 -->
       <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -168,7 +165,8 @@
                 style="margin-left: 0 !important;"></button>
             </div>
             <div class="modal-body">
-              <form id="EmployeeFam" method="post">
+
+              <form id="EmployeeFama" method="post">
                 <input type="text" id="name2" name="name" placeholder="اسمك.." required>
                 <input type="phone" id="tel" name="phone" placeholder="رقم موبايل" required>
                 <p id="error" style="color:red"></p>
@@ -182,12 +180,13 @@
                   <option value="customer service">نوع التأمين</option>
                 </select>
                 <input type="submit" class="text-center submit" value="ارسال">
-                <form>
+              </form>
 
 
             </div>
           </div>
         </div>
+      </div>
 
       <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -200,22 +199,22 @@
 
 
 
-            <!-- <div class="modal-body">
-              <form id="EmployeeFam" method="post">
+            <div class="modal-body">
+
+              <form id="yalla" class="yrab" method="post">
                 <input type="text" id="name2" name="name" placeholder="اسمك.." required>
-                <input type="phone" id="tel" name="phone" placeholder="رقم موبايل" required>
+                <input type="phone" id="phone" name="phone" placeholder="رقم موبايل" required>
                 <p id="error1" style="color:red"></p>
-                <input type="tel" name="numberOfEmployee" id="mobile-number" placeholder="عدد الموظفين  *" required>
-                <input type="tel" name="numberOfEmployeeFam" id="mobile-number" placeholder="اجمالى عدد افراد الاسر   *"
-                  required>
-
+                <input type="number" name="numberOfEmployee" id="mobile-number" placeholder="عدد الموظفين s *" required>
+                
+                
+                
                 <select id="country" class="d-none" style="width:90%;border:1px solid var(--primary)" name="type"
-                  required>
-                  <option value="customer service">نوع التأمين</option>
-                </select>
-                <input type="submit" class="text-center submit" value="ارسال">
-                <form> -->
-
+                required>
+                <option value="customer service">نوع التأمين</option>
+              </select>
+              <input type="submit" class="text-center submit" value="ارسال">
+            </form>
 
         </div>
         </div>
@@ -284,94 +283,101 @@
 
     <script>
 
-      const contactusform = document.getElementById("EmployeeFam");
-      // const customerServiceform = document.getElementById("customerService");
-
-
-      // const phone = document.getElementById("phone");
+      const EmployeeFamForm = document.getElementById("EmployeeFama");
       const phone = document.getElementById("tel");
-      // const error1 = document.getElementById("error1");
-
-
       const error = document.getElementById("error");
-      let err = "برجاء ادخال رقم صحيح"
+      
+      
+      
+  
+      const Employeeform = document.getElementById("yalla");
+      const phone1 = document.getElementById("phone");
+      const error1 = document.getElementById("error1");
 
-      contactusform.addEventListener('submit', async function (e) {
+
+      let err = "برجاء ادخال رقم صحيح"
+      
+      EmployeeFamForm.addEventListener('submit', async function (e) {
         e.preventDefault();
         let mobileValid = /^(010 || 012 || 011|| 015)[0-9]{11}$/.test(phone.value)
-
-
-        const formdata = new FormData(contactusform)
+        
+        
+        const formdata = new FormData(EmployeeFamForm)
         const formdatasec = Object.fromEntries(formdata);
-
+        
         if (mobileValid && phone.value.length === 11) {
-
+          
           err = ""
           try {
             let response = await axios.post('api/v1/users', formdatasec,);
             // let response1 = await axios.get('api/v1/users',  {
-            // });
-
-            const json = await response.data;
-            // const json1=await response1;
-            console.log(json);
-            // console.log(json1);
-            alert("تم ارسل الطلب بنجاح")
-
+              // });
+              
+              const json = await response.data;
+              // const json1=await response1;
+              console.log(json);
+              // console.log(json1);
+              alert("تم ارسل الطلب بنجاح")
+              
+            }
+            catch (e) {
+              console.log(e);
+            }
+            error.innerText = err;
           }
-          catch (e) {
-            console.log(e);
+          else {
+            
+            let err = "برجاء ادخال رقم صحيح"
+            e.preventDefault();
+            error.innerText = err;
+            
           }
-          error.innerText = err;
-        }
-        else {
-
+          
+        })
+        
+        
+        
+        Employeeform.addEventListener('submit', async function (e) {
           e.preventDefault();
-          error.innerText = err;
-
-        }
-      })
-
-    //   customerServiceform.addEventListener('submit', async function (e) {
-    //     e.preventDefault();
-
-    //     const formdataa = new FormData(customerServiceform)
-    //     const formdataasec = Object.fromEntries(formdataa);
-    //     let mobileValid12 = /^(010 || 012 || 011|| 015)[0-9]{11}$/.test(phone1.value)
-
-
-    //     if (mobileValid12 && phone1.value.length === 11) {
-
-    //       err = ""
-
-    //       try {
-    //         let response = await axios.post('api/v1/users',
-    //           formdataasec
-    // ,
-
-
-    //         );
-    //         // let response1 = await axios.get('api/v1/users',  {
-    //         // });
-
-    //         const json = await response.data;
-    //         // const json1=await response1;
-    //         console.log(json);
-    //         // console.log(json1);
-    //         alert("added")
-    //       }
-    //       catch (e) {
-    //         console.log(e);
-    //       }
-    //       error1.innerText = err;
-    //     }
-    //     else {
-
-    //       e.preventDefault();
-    //       error1.innerText = err;
-
-    //     }
-    //   })
+          
+          const formdataa = new FormData(Employeeform)
+          const formdataasec = Object.fromEntries(formdataa);
+          let mobileValid12 = /^(010 || 012 || 011|| 015)[0-9]{11}$/.test(phone1.value)
+          
+          
+          if (mobileValid12 && phone1.value.length === 11) {
+            
+            err = ""
+            
+            try {
+              let response = await axios.post('api/v1/users',
+              formdataasec
+              ,
+              
+              
+              );
+              // let response1 = await axios.get('api/v1/users',  {
+                // });
+                
+                const json = await response.data;
+                // const json1=await response1;
+                console.log(json);
+                // console.log(json1);
+                alert("added")
+              }
+              catch (e) {
+                console.log(e);
+              }
+              error1.innerText = err;
+            }
+            else {
+              
+              let err = "برجاء ادخال رقم صحيح"
+              e.preventDefault();
+              error1.innerText = err;
+              
+            }
+          })
 
     </script>
 
