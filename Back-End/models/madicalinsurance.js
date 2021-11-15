@@ -15,21 +15,20 @@ const madicalSchema = new mongoose.Schema({
             if(!validator.isMobilePhone(value, ['ar-EG'])) throw new Error('egyption mobile needed')
         }  
     },
-    carbrand: {
-        type: String,
-        required: true,
+    numberofemployee: {
+        type: Number,
     },
-    carmodel: {
+   
+
+    type: {
         type: String,
-        required: true,
+        required: [true," dif type"],
+        enum: ["medical Insurance individual","medical Insurance company"]
     },
-    caryear: {
+    email: {
         type: String,
-        required: true,
-    },
-    carprice: {
-        type: String,
-        required: true,
+        lowercase: true,
+        validate: [validator.isEmail, "Please provide a valid email"],
     },
     ownerage: {
         type: String,

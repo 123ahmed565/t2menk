@@ -28,8 +28,28 @@ const userSchema = new mongoose.Schema({
         required: [true," dif type"],
         enum: ["Property Insurance","life Insurance","travel Insurance's","car Insurance","medical Insurance individual","medical Insurance company","customer service","Report an accident"]
     },
+    chroniccondition : {
+        type: String,
+      
+        enum: ["yes","no"]
+    },
     message: {
         type: String,
+    },
+    numberOfEmployee: {
+        type: Number,
+    },
+    numberOfEmployeeFam: {
+        type: Number,
+    },
+    Bdate: {
+        type: Date,
+    },
+    BdateWife: {
+        type: Date,
+    },
+    BdateSon: {
+        type: Date,
     },
 
     

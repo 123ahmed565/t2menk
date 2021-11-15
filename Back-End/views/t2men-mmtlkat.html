@@ -131,6 +131,7 @@
         
         <!-- <label for="number">رقم الهاتف</label> -->
         <input type="text" id="phone" class="w-80" name="phone" placeholder="رقم موبايل"required>
+        <p id="error" style="color:red"></p>
     
         <!-- <label for="subject">بيانات اضافية</label> -->
         <textarea id="subject" name="message" placeholder="ادخل ملاحظاتك هنا..." style="height:150px;width: 90%;border:1px solid var(--primary)" ></textarea>
@@ -198,14 +199,21 @@
 
 <script>
     const t2menmmtalktform= document.getElementById("t2menmmtalkt");
+    const phone=document.getElementById("phone");
+const error=document.getElementById("error");
+let err="برجاء ادخال رقم صحيح"
 
     t2menmmtalktform.addEventListener('submit',async function(e){
       e.preventDefault();
+      let mobileValid =/^(010 || 012 || 011|| 015)[0-9]{11}$/.test(phone.value)
+
     
       const formdata=new FormData(t2menmmtalktform)
       const formdatasec=Object.fromEntries(formdata);
       
-      
+      if(mobileValid&&phone.value.length === 11){
+    
+    err="" 
       
       
       try{
@@ -222,12 +230,25 @@
         // const json1=await response1;
         console.log(json);
         // console.log(json1);
-        alert("added")
+        alert("تم ارسل الطلب بنجاح")
       }
       catch(e){
         console.log(e);
       } 
-    })
+      error.innerText=err;
+
+    }
+    
+    
+    
+  else{
+      
+      e.preventDefault();
+      error.innerText=err;
+      
+    }
+    }
+    )
     </script>
 
 

@@ -129,6 +129,7 @@
     
         <!-- <label for="number">رقم الهاتف</label> -->
         <input type="phone" id="phone" name="phone" placeholder="رقم موبايل" required>
+        <p id="error" style="color:red"></p>
     
         <!-- <label for="email">(البريد الالكتروني (إختياري</label> -->
         <input type="email" id="email" name="email" placeholder="ايميلك" required>
@@ -150,7 +151,6 @@
       <input type="submit"class="text-center submit" value="ارسال" >
 
       </form>
-      <p id="error" style="color:red"></p>
     </div>
     <div class="col-md-4 col-sm-12 info mt-5">
       <div class="container">
@@ -219,37 +219,44 @@ const contactusform= document.getElementById("contact-us-form");
 
 const phone=document.getElementById("phone");
 const error=document.getElementById("error");
+let err="برجاء ادخال رقم صحيح"
 
 contactusform.addEventListener('submit',async function(e){
   e.preventDefault();
-
+  let mobileValid =/^(010 || 012 || 011|| 015)[0-9]{11}$/.test(phone.value)
+  
+  
   const formdata=new FormData(contactusform)
   const formdatasec=Object.fromEntries(formdata);
   
-  
-  
-  
-  try{
-    let response = await axios.post('api/v1/users', 
-      formdatasec
-          ,
-           
- 
-  );
+  if(mobileValid&&phone.value.length === 11){
+    
+     err="" 
+    try{ let response = await axios.post('api/v1/users', formdatasec , );
     // let response1 = await axios.get('api/v1/users',  {
-  // });
-
-    const json=await response.data;
-    // const json1=await response1;
-    console.log(json);
-    // console.log(json1);
-    
-    
+      // });
+      
+      const json=await response.data;
+      // const json1=await response1;
+      console.log(json);
+      // console.log(json1);
+    alert("تم ارسل الطلب بنجاح")
+      
+    }
+    catch(e){
+      console.log(e);
+    } 
+    error.innerText=err;
+    }
+    else{
+      
+      e.preventDefault();
+      error.innerText=err;
+      
+    }
   }
-  catch(e){
-    console.log(e);
-  } 
-})
+  )
+  
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>

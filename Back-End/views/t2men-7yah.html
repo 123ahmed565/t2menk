@@ -127,6 +127,8 @@
       
           <!-- <label for="number">رقم الهاتف</label> -->
           <input type="tel" id="tel" name="phone" placeholder="رقم موبايل" required>
+        <p id="error" style="color:red"></p>
+
       
           <!-- <label for="subject">بيانات اضافية</label> -->
           <textarea id="subject" name="message" placeholder="ادخل ملاحظاتك هنا..." style="height:150px;width: 90%;border:1px solid var(--primary)" ></textarea>
@@ -193,15 +195,21 @@
 
 <script>
     const t2men7yahform= document.getElementById("t2men-7yah");
+    const phone=document.getElementById("tel");
+const error=document.getElementById("error");
+let err="برجاء ادخال رقم صحيح"
 
     t2men7yahform.addEventListener('submit',async function(e){
       e.preventDefault();
+      let mobileValid =/^(010 || 012 || 011|| 015)[0-9]{11}$/.test(phone.value)
     
       const formdata=new FormData(t2men7yahform)
       const formdatasec=Object.fromEntries(formdata);
       
       
-      
+      if(mobileValid&&phone.value.length === 11){
+    
+    err=""
       
       try{
         let response = await axios.post('api/v1/users', 
@@ -217,12 +225,25 @@
         // const json1=await response1;
         console.log(json);
         // console.log(json1);
-        alert("added")
+        alert("تم ارسل الطلب بنجاح")
       }
       catch(e){
         console.log(e);
       } 
-    })
+    
+    error.innerText=err;
+
+}
+
+
+    else{
+      
+      e.preventDefault();
+      error.innerText=err;
+      
+    }
+    }
+    )
     </script>
 
 
