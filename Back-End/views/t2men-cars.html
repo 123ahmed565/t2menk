@@ -237,6 +237,14 @@
       <form action="">
         <div class="row">
           <div class="col">
+            <input type="text" name="" id="" placeholder="الاسم" required>
+          </div>
+          <div class="col">
+            <input type="number" name="" id="" placeholder="رقم الموبايل" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
             <select name="ch_brand" id="brand" class="form-item" required="" style="border: 1px solid var(--primary);">
               <option value="">اختار الماركة</option>
               <option value="707">ألفا روميو</option>
@@ -330,14 +338,14 @@
               <option value="688">2022</option>
             </select>
           </div>
-          <div class="col" >
-            <input class="pb-4  ps-4" type="number" name="" id="" min="7000" max="10000000" placeholder="سعر السيارة">
+          <div class="col">
+            <input class="pb-4  ps-4" type="number" name="" id="" min="7000" max="10000000" placeholder="سعر السيارة" required>
           </div>
           <div class="col">
-            <input class="pb-4 ps-4" type="number" name="" id="" placeholder="عمر المالك  ">
+            <input class="pb-4 ps-4" type="number" name="" id="" placeholder="عمر المالك  " required>
           </div>
           <div class="col">
-          <input type="button" class="btn btn-success p-3" name="" value="اظهار العروض" id="">
+            <a href="/showoffer"><input type="button" class="btn btn-success p-3" name="" value="اظهار العروض" id=""></a>
           </div>
         </div>
       </form>

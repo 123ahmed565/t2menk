@@ -53,6 +53,12 @@ app.use('/api/v1/carinsurance', carinsurance );
 app.get('/',(req, res) => {
   res.sendFile(path.join(__dirname,"/views/index.html"))
 })
+app.get('/showoffer',(req, res) => {
+  res.sendFile(path.join(__dirname,"/views/show-offer.html"))
+})
+app.get('/getoffer',(req, res) => {
+  res.sendFile(path.join(__dirname,"/views/getoffer.html"))
+})
 app.get('/home',(req, res) => {
   res.sendFile(path.join(__dirname,"/views/index.html"))
 })
