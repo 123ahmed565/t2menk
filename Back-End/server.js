@@ -13,6 +13,7 @@ process.on("uncaughtException", (err) => {
 dotenv.config({ path: "./config.env" });
 const app = require("./app");
 
+
 const DB = process.env.CONNECTIONDB;
 mongoose
   .connect(DB, {
@@ -24,9 +25,9 @@ mongoose
   .then(console.log("database connected successfully"));
 
 // start server
-const port = process.env.PORT;
-const server = app.listen(port, () => {
-  console.log(`Server is listening at http://localhost:${port}`);
+var port = process.env.PORT||8000;
+const server = app.listen( port, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
 
 // Subscribe to unhandledRejection event emmited by tht process object

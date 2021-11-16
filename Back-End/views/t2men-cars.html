@@ -22,6 +22,9 @@
   <meta property="og:type" content="Service" />
   <meta name="og:postal-code" content="12573" />
   <meta name="og:country-name" content="Egypt" />
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="./css/main.css">
@@ -96,7 +99,7 @@
                             <a class="nav-link" href="./blog.html">Blog</a>
                         </li> -->
             <div class="dropdown">
-              <a href="./anwa3-t2men.html">
+              <a href="/typeofInsurance">
                 <p class="dropbtn" style="color:var(--primary);">انواع التأمين</p>
               </a>
               <div class="dropdown-content">
@@ -234,118 +237,122 @@
         </div>
       </div> -->
 
-      <form action="">
+      <form id="car" >
         <div class="row">
           <div class="col">
-            <input type="text" name="" id="" placeholder="الاسم" required>
+            <input type="text" name="name" id="" placeholder="الاسم" required>
           </div>
           <div class="col">
-            <input type="number" name="" id="" placeholder="رقم الموبايل" required>
+            <input type="phone" name="phone" id="phone" placeholder="رقم الموبايل" required>
+            <p id="error" style="color:red"></p>
           </div>
+
         </div>
         <div class="row">
           <div class="col">
-            <select name="ch_brand" id="brand" class="form-item" required="" style="border: 1px solid var(--primary);">
+            <select name="carbrand" id="brand" class="form-item" required="" style="border: 1px solid var(--primary);">
               <option value="">اختار الماركة</option>
-              <option value="707">ألفا روميو</option>
-              <option value="711">أوبل</option>
-              <option value="709">أودى</option>
-              <option value="705">ام جى</option>
-              <option value="702">ايسوزو</option>
-              <option value="698">بروتون</option>
-              <option value="696">بريليانس</option>
-              <option value="694">بورشه</option>
-              <option value="692">بى ام دابليو</option>
-              <option value="690">بى واي دى</option>
-              <option value="688">بيجو</option>
-              <option value="687">تسلا</option>
-              <option value="686">تويوتا</option>
-              <option value="684">جاجوار</option>
-              <option value="682">جاك</option>
-              <option value="680">جيب</option>
-              <option value="5930">جيتور</option>
-              <option value="678">جيلى</option>
-              <option value="676">دايهاتسو</option>
-              <option value="673">دودج</option>
-              <option value="6988">دي اف اس كيه DFSK</option>
-              <option value="670">رينو</option>
-              <option value="668">زوتى</option>
-              <option value="666">سانجيونج</option>
-              <option value="1357">سبيرانزا</option>
-              <option value="664">ستروين</option>
-              <option value="661">سكودا</option>
-              <option value="659">سوبارو</option>
-              <option value="657">سوزوكى</option>
-              <option value="655">سيات</option>
-              <option value="654">سينوفا</option>
-              <option value="653">شانجان</option>
-              <option value="652">شيرى</option>
-              <option value="651">شيفروليه</option>
-              <option value="649">فاو</option>
-              <option value="647">فورد</option>
-              <option value="646">فولفو</option>
-              <option value="645">فولكسفاجن</option>
-              <option value="644">فيات</option>
-              <option value="643">كرايسلر</option>
-              <option value="641">كيا</option>
-              <option value="638">لادا</option>
-              <option value="636">لاند روفر</option>
-              <option value="639">لكزس</option>
-              <option value="635">مازدا</option>
-              <option value="633">مرسيدس بنز</option>
-              <option value="632">ميتسوبيشى</option>
-              <option value="631">مينى</option>
-              <option value="630">نيسان</option>
-              <option value="6981">هافال</option>
-              <option value="626">هوندا</option>
-              <option value="624">هيونداى</option>
+              <option value="Alfa Romeo">  ألفا روميو  </option>
+              <option value="Opel">أوبل</option>
+              <option value="Audi"> أودى </option>
+              <option value="MG">ام جى</option>
+              <option value="Isuzu">ايسوزو</option>
+              <option value="proten">بروتون</option>
+              <option value="Brilliance">بريليانس</option>
+              <option value="Porsche">بورشه</option>
+              <option value="BMW">بى ام دابليو</option>
+              <option value="BYW">بى واي دى</option>
+              <option value="Peugeot">بيجو</option>
+              <option value="Tesla">تسلا</option>
+              <option value="Toyota">تويوتا</option>
+              <option value="Jaguar">جاجوار</option>
+              <option value="jak">جاك</option>
+              <option value="jeep">جيب</option>
+              <option value="Gator">جيتور</option>
+              <option value="jelly">جيلى</option>
+              <option value="Daihatsu">دايهاتسو</option>
+              <option value="dodge">دودج</option>
+              <option value="DFSK">دي اف اس كيه DFSK</option>
+              <option value="rno">رينو</option>
+              <option value="zoty">زوتى</option>
+              <option value="sanjeong">سانجيونج</option>
+              <option value="Speranza">سبيرانزا</option>
+              <option value="Citroen">ستروين</option>
+              <option value="Skoda">سكودا</option>
+              <option value="Subaru">سوبارو</option>
+              <option value="suzuki">سوزوكى</option>
+              <option value="sait">سيات</option>
+              <option value="Senova">سينوفا</option>
+              <option value="Changan">شانجان</option>
+              <option value="Shery">شيرى</option>
+              <option value="Chevrolet">شيفروليه</option>
+              <option value="faw">فاو</option>
+              <option value="ford">فورد</option>
+              <option value="Volvo">فولفو</option>
+              <option value="Volkswagen">فولكسفاجن</option>
+              <option value="fait">فيات</option>
+              <option value="Chrysler">كرايسلر</option>
+              <option value="kia">كيا</option>
+              <option value="Lada">لادا</option>
+              <option value="land Rover"> لاند روفر </option>
+              <option value="Lexus">لكزس</option>
+              <option value="Mazda">مازدا</option>
+              <option value="benz">مرسيدس بنز</option>
+              <option value="Mitsubishi">ميتسوبيشى</option>
+              <option value="mini">مينى</option>
+              <option value="nissan">نيسان</option>
+              <option value="haval">هافال</option>
+              <option value="honda">هوندا</option>
+              <option value="hyundai">هيونداى</option>
             </select>
           </div>
           <div class="col">
-            <select name="ch_model" id="model" class="form-item" required="" style="border: 1px solid var(--primary);">
+            <select name="carmodel" id="model" class="form-item" required="" style="border: 1px solid var(--primary);">
               <option value="">اختار الموديل</option>
-              <option value="646">فولفو</option>
-              <option value="645">فولكسفاجن</option>
-              <option value="644">فيات</option>
-              <option value="643">كرايسلر</option>
-              <option value="641">كيا</option>
-              <option value="638">لادا</option>
-              <option value="636">لاند روفر</option>
-              <option value="639">لكزس</option>
-              <option value="635">مازدا</option>
-              <option value="633">مرسيدس بنز</option>
-              <option value="632">ميتسوبيشى</option>
-              <option value="631">مينى</option>
-              <option value="630">نيسان</option>
-              <option value="6981">هافال</option>
-              <option value="626">هوندا</option>
-              <option value="624">هيونداى</option>
+              <option value="volvlo">فولفو</option>
+              <option value="Volkswagen">فولكسفاجن</option>
+              <option value="fait">فيات</option>
+              <option value="Chrysler">كرايسلر</option>
+              <option value="kia">كيا</option>
+              <option value="lada">لادا</option>
+              <option value="land Rover">لاند روفر</option>
+              <option value="Lexus">لكزس</option>
+              <option value="Mazda">مازدا</option>
+              <option value="benz">مرسيدس بنز</option>
+              <option value="Mitsubishi">ميتسوبيشى</option>
+              <option value="mini">مينى</option>
+              <option value="nissan">نيسان</option>
+              <option value="haval">هافال</option>
+              <option value="honda">هوندا</option>
+              <option value="hyundai">هيونداى</option>
             </select>
           </div>
           <div class="col">
-            <select name="ch_year" id="year" class="form-item" required="" style="border: 1px solid var(--primary);">
+            <select name="caryear" id="year" class="form-item" required="" style="border: 1px solid var(--primary);">
               <option value="">اختار السنة</option>
-              <option value="707">2012</option>
-              <option value="711">2013</option>
-              <option value="709">2014</option>
-              <option value="705">2015</option>
-              <option value="702">2016</option>
-              <option value="698">2017</option>
-              <option value="696">2018</option>
-              <option value="694">2019</option>
-              <option value="692">2020</option>
-              <option value="690">2021</option>
-              <option value="688">2022</option>
+              <option value="2010">2012</option>
+              <option value="2013">2013</option>
+              <option value="2014">2014</option>
+              <option value="2015">2015</option>
+              <option value="2016">2016</option>
+              <option value="2017">2017</option>
+              <option value="2018">2018</option>
+              <option value="2019">2019</option>
+              <option value="2020">2020</option>
+              <option value="2021">2021</option>
+              <option value="2022">2022</option>
             </select>
           </div>
           <div class="col">
-            <input class="pb-4  ps-4" type="number" name="" id="" min="7000" max="10000000" placeholder="سعر السيارة" required>
+            <input class="pb-4  ps-4" type="number" id="" name="carprice" min="7000" max="10000000" placeholder="سعر السيارة" required>
           </div>
           <div class="col">
-            <input class="pb-4 ps-4" type="number" name="" id="" placeholder="عمر المالك  " required>
+            <input class="pb-4 ps-4" type="number"  id="" name="ownerage" placeholder="عمر المالك  " required>
           </div>
           <div class="col">
-            <a href="/showoffer"><input type="button" class="btn btn-success p-3" name="" value="اظهار العروض" id=""></a>
+            <!-- <a href="/showoffer"> -->
+              <input type="submit" class="btn btn-success p-3"  value="اظهار العروض" id="">
+            <!-- </a> -->
           </div>
         </div>
       </form>
@@ -673,6 +680,52 @@
     </div>
   </footer>
   <!-- End footer -->
+
+  <script>
+    const carform= document.getElementById("car");
+    
+    const phone=document.getElementById("phone");
+    const error=document.getElementById("error");
+    let err="برجاء ادخال رقم صحيح"
+    
+    carform.addEventListener('submit',async function(e){
+      e.preventDefault();
+      let mobileValid =/^(010 || 012 || 011|| 015)[0-9]{11}$/.test(phone.value)
+      
+      
+      const formdata=new FormData(carform)
+      const formdatasec=Object.fromEntries(formdata);
+      console.log(formdatasec);
+      
+      if(mobileValid&&phone.value.length === 11){
+        
+         err="" 
+        try{ let response = await axios.post('api/v1/carinsurance', formdatasec , );
+        // let response1 = await axios.get('api/v1/users',  {
+          // });
+          
+          const json=await response.data;
+          // const json1=await response1;
+          console.log(json);
+          // console.log(json1);
+          window.location.href ="/showoffer"          
+        }
+        catch(e){
+          console.log(e);
+        } 
+        error.innerText=err;
+
+        }
+        else{
+          
+          e.preventDefault();
+          error.innerText=err;
+          
+        }
+      }
+      )
+      
+    </script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
