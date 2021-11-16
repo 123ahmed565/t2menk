@@ -24,8 +24,8 @@ mongoose
   .then(console.log("database connected successfully"));
 
 // start server
-const port = 8000;
-const server = app.listen(process.env.PORT || 3000,'0.0.0.0', function(){
+var port = process.env.PORT||8000;
+const server = app.listen( port,'0.0.0.0', function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
 
