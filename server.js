@@ -25,8 +25,8 @@ mongoose
 
 // start server
 const port = 8000;
-const server = app.listen(process.env.PORT||port, () => {
-  console.log(`Server is listening at http://localhost:${process.env.PORT||port}`);
+const server = app.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
 
 // Subscribe to unhandledRejection event emmited by tht process object
