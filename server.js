@@ -26,7 +26,7 @@ mongoose
 
 // start server
 var port = process.env.PORT||8000;
-const server = app.listen( port,'0.0.0.0', function(){
+const server = app.listen( port, function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
 
