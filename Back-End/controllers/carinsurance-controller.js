@@ -40,12 +40,15 @@ const getCar = catchAsyncError(async (req, res, next) => {
 
 // register a new Car
 const carObject = (req) => {
+
  
 let carInfo = req.body;
 return carInfo;
 };
 const createCar = catchAsyncError(async (req, res, next) => {
+
   let carObj = carObject(req);
+
   
   
   const car = await new Car(carObj);
@@ -68,6 +71,11 @@ const updateCar = catchAsyncError(async (req, res, next) => {
   let carObj = carObject(req);
 
 
+  carObj.faceImg=`/uploads/profilePics/${req.files.faceImg[0].filename}`
+  carObj.backImg=`/uploads/profilePics/${req.files.backImg[0].filename}`
+
+
+
   //TODO WHEN WORKING DAYS CAHNGE ==> HANDLE FUTURE PRERESERVED APPOINTMENTS
   let car = await Car.findOneAndUpdate(
     { _id: req.params.id },
@@ -81,7 +89,6 @@ const updateCar = catchAsyncError(async (req, res, next) => {
   if (!car) {
     return next(new ErrorHandler("Car not found", 404));
   }
-
   res.status(200).json({
     status: "success",
     carName: car.name,

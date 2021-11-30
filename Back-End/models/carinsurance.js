@@ -37,8 +37,8 @@ const carSchema = new mongoose.Schema({
     },
 
    
-  faceImg: String,
-  backImg: String,
+  faceImg: {String},
+  backImg: {String},
 
 
     

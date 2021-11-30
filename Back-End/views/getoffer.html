@@ -144,12 +144,15 @@
                3- تصدر الوثيقة خلال يوم عمل بعد المعاينة.
                </li>
            </ol>
-<form action="">
+<form method="put"    id="id-form" class="">
+
     <label class="mt-4" for="">اضغط هنا لرفع صورة الرخصه (من الامام)</label>
-    <input type="file"  class="form-control form-control-sm w-25 mx-auto d-block">
+    <input type="file" id="faceimg"  name="faceImg" class="form-control form-control-sm w-25 mx-auto d-block">
     <label class="mt-4" for="">اضغط هنا لرفع صورة الرخصه (من الخلف)</label>
-    <input type="file"  class="form-control form-control-sm w-25 mx-auto d-block">
+    <input type="file" id="backimg" name="backImg" class="form-control form-control-sm w-25 mx-auto d-block">
     <input type="submit" class="btn btn-success w-50 mt-4" value="تأكيد الطلب">
+
+
 </form>
        </div>
    </div>
@@ -206,97 +209,52 @@
 
 
     <script>
-
-        const contactusform = document.getElementById("EmployeeFam");
-        // const customerServiceform = document.getElementById("customerService");
-
-
-        // const phone = document.getElementById("phone");
-        const phone = document.getElementById("tel");
-        // const error1 = document.getElementById("error1");
-
-
-        const error = document.getElementById("error");
-        let err = "برجاء ادخال رقم صحيح"
-
-        contactusform.addEventListener('submit', async function (e) {
+        const offerform= document.getElementById("id-form");
+        
+        
+        var faceimg = document.querySelector('#faceimg');
+        var backimg = document.querySelector('#backimg');
+        
+        offerform.addEventListener('submit',async function(e){
             e.preventDefault();
-            let mobileValid = /^(010 || 012 || 011|| 015)[0-9]{11}$/.test(phone.value)
+            
+            let formdata=new FormData()
+            console.log(faceimg.files[0]);
+            console.log(backimg.files[0]);
+            formdata.append("faceImg", faceimg.files[0]);
+            formdata.append("backImg", backimg.files[0]);
+          console.log(formdata);
+         
+
+          const formdatasec=Object.fromEntries(formdata);
+          let id="61a639bb2b1e5666209393f1"
+          console.log(formdatasec);
+    
+            
+                axios.post(`api/v1/carinsurance/${id}`, formdatasec, {
+    headers: {
+      'Content-Type': 'multipart/form-data'
+    }
+}).then(function(response){
+    console.log(response);
+    
+})
+.catch(function(error){
+    console.log(error);
+
+});
+              
+    
+            
+         
+          }
+          )
+          
+        </script>
 
 
-            const formdata = new FormData(contactusform)
-            const formdatasec = Object.fromEntries(formdata);
-
-            if (mobileValid && phone.value.length === 11) {
-
-                err = ""
-                try {
-                    let response = await axios.post('api/v1/users', formdatasec,);
-                    // let response1 = await axios.get('api/v1/users',  {
-                    // });
-
-                    const json = await response.data;
-                    // const json1=await response1;
-                    console.log(json);
-                    // console.log(json1);
-                    alert("تم ارسل الطلب بنجاح")
-
-                }
-                catch (e) {
-                    console.log(e);
-                }
-                error.innerText = err;
-            }
-            else {
-
-                e.preventDefault();
-                error.innerText = err;
-
-            }
-        })
-
-    //   customerServiceform.addEventListener('submit', async function (e) {
-    //     e.preventDefault();
-
-    //     const formdataa = new FormData(customerServiceform)
-    //     const formdataasec = Object.fromEntries(formdataa);
-    //     let mobileValid12 = /^(010 || 012 || 011|| 015)[0-9]{11}$/.test(phone1.value)
 
 
-    //     if (mobileValid12 && phone1.value.length === 11) {
-
-    //       err = ""
-
-    //       try {
-    //         let response = await axios.post('api/v1/users',
-    //           formdataasec
-    // ,
-
-
-    //         );
-    //         // let response1 = await axios.get('api/v1/users',  {
-    //         // });
-
-    //         const json = await response.data;
-    //         // const json1=await response1;
-    //         console.log(json);
-    //         // console.log(json1);
-    //         alert("added")
-    //       }
-    //       catch (e) {
-    //         console.log(e);
-    //       }
-    //       error1.innerText = err;
-    //     }
-    //     else {
-
-    //       e.preventDefault();
-    //       error1.innerText = err;
-
-    //     }
-    //   })
-
-    </script>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
