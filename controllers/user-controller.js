@@ -8,8 +8,7 @@ const getAllUsers = catchAsyncError(async (req, res, next) => {
   const features = new APIFearures(User.find(), req.query)
     .filter()
     .sort()
-    .project()
-    .paginate();
+    .project();
 
   const lengthFeatures = new APIFearures(User.find(), req.query).filter();
 

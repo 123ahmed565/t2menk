@@ -20,6 +20,9 @@
     <meta name="coverage" content="Worldwide">
     <meta name="revisit-after" content="5 days">
     <meta property="og:type" content="Service" />
+
+
+
     <meta name="og:postal-code" content="12573" />
     <meta name="og:country-name" content="Egypt" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
@@ -130,45 +133,49 @@
             <div class="table-responsive">
 
             
-            <table class="table  table-bordered  table-hover">
+    <table class="table table-fluid  table-hover table-striped table-bordered table-sm"  id="myTable" width="100%" >
+
+
                 <thead class="table-dark  ">
                     <tr class="text-center">
-                        <th rowspan="2">الاسم</th>
-                        <th rowspan="2">النوع</th>
-                        <th rowspan="2">رقم الهاتف</th>
-                        <th rowspan="2">الرساله</th>
-                        <th rowspan="2">البريد الالكتروني </th>
-                        <th colspan="4">
+                        <th rowspan="2" class="th-sm">الاسم</th>
+                        <th rowspan="2 "class="th-sm">النوع</th>
+                        <th rowspan="2" class="th-sm" >رقم الهاتف</th>
+                        <th rowspan="2" class="th-sm" >الرساله</th>
+                        <th rowspan="2" class="th-sm" >البريد الالكتروني </th>
+                        <th colspan="4" class="th-sm" >
                             تامين طيي افراد
 
                         </th>
-                        <th colspan="3">تامين طيي شركات</th>
+                        <th colspan="3" class="th-sm">تامين طيي شركات</th>
                     </tr>
                     <tr>
-                        <td>هل يحتاج اي من الافراد لعلاج شهري </td>
-                        <td>تاريخ ميلاد</td>
-                        <td> الزواجة تاريخ ميلاد</td>
-                        <td>تاريخ ميلاد الابن</td>
+                        <th class="th-sm">هل يحتاج اي من الافراد لعلاج شهري </th>
+                        <th class="th-sm">تاريخ ميلاد</th>
+                        <th class="th-sm"> الزواجة تاريخ ميلاد</th>
+                        <th class="th-sm">تاريخ ميلاد الابن</th>
                       
-                        <td>
+                        <th class="th-sm">
                             
                             عدد الموظفين 
                             
-                        </td>
-                        <td>
+                        </th>
+                        <th class="th-sm">
                             اجمالى عدد افراد الاسر  
                             
-                        </td>
+                        </th>
                       
                     </tr>
                     </thead>
                 <tbody class="table-primary" id="TD">
                 </tbody>
             </table>
+           
             
         </div>
         </div>
     </div>
+
     <!-- end dashboard -->
 
 
@@ -223,9 +230,10 @@
     <script>
 
 var bodytable = document.getElementById("TD");
-var email,first_name,last_name;
+var email,name,type,message,chroniccondition,Bdate,Bdateo,BdateWife,BdateWifeo,BdateSon,BdateSono,numberOfEmployee,numberOfEmployeeFam;
 var xhr = new XMLHttpRequest();
 var dataAjax = "";
+
 xhr.onreadystatechange = function () {
   if (xhr.readyState == 4) {
     if (xhr.status == 200) {
@@ -276,11 +284,29 @@ function outdisplaytable(email,name,type,phone,message,chroniccondition,Bdate,Bd
   "<td>"+numberOfEmployee+"</td>"+
   "<td>"+numberOfEmployeeFam+"</td>" ;
 }
+
     </script>
+    <script>
+        $(document).ready( function () {
+        $('#myTable').DataTable();
+    } );
+        </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>.
+
+  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" ></script>
+
+  <script
+  src="http://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+
+
+  <script src="./js/main.js"></script>
     <!-- Go to www.addthis.com/dashboard to customize your tools -->
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-61557304f9644901"></script>
 </body>

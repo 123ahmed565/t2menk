@@ -8,8 +8,7 @@ const getAllCars = catchAsyncError(async (req, res, next) => {
   const features = new APIFearures(Car.find(), req.query)
     .filter()
     .sort()
-    .project()
-    .paginate();
+    .project();
 
   const lengthFeatures = new APIFearures(Car.find(), req.query).filter();
 
