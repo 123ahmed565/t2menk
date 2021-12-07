@@ -45,8 +45,13 @@ Router.route("/")
 
 
 
+
 Router.route("/:id")
   .get(getCar)
-  .put(upload.single("faceImg"),upload.single("backImg"),updateCar)
+  .put(upload.fields([{
+    name: 'faceImg', maxCount: 1
+  }, {
+    name: 'backImg', maxCount: 1
+  }]),updateCar)
   .delete(deleteCar);
 module.exports = Router;

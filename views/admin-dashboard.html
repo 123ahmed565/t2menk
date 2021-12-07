@@ -22,10 +22,6 @@
     <meta property="og:type" content="Service" />
     <meta name="og:postal-code" content="12573" />
     <meta name="og:country-name" content="Egypt" />
-
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="./css/main.css">
@@ -34,10 +30,8 @@
 
 <body>
 
-
-
     <!-- start preloader -->
-    <div class="loader_bg">
+    <div class="loader_bg">.
         <div class="loader"></div>
     </div>
     <!-- end preloader  -->
@@ -52,8 +46,7 @@
             <div class="row">
                 <div class="col">
                     <a style="display: flex; width: 100%;"><i class="fas fa-map-marker-alt m-2"></i> <span>9870 St
-                            Vincent
-                            Place</span></a>
+                            Vincent Place</span></a>
                 </div>
                 <div class="col">
                     <a style="display: flex; width: 100%;" href="tel:+201012370014"><i class="fas fa-phone-alt m-2"></i>
@@ -80,11 +73,12 @@
     </div>
     <!-- end upper bar -->
 
+
     <!-- start header -->
     <nav class="navbar navbar-expand-sm shadow-sm bg-white rounded sticky-top">
         <div class="container">
             <i class="fas fa-bars  fa-2x mt-3 mr-3" data-bs-toggle="offcanvas" data-bs-target="#demo"></i>
-            <a href="/"> <img class="logo-navbar" src="./images/corp_group.png" width="60" height="60" alt="iamage logo"
+            <a href="/"> <img class="logo-navbar" src="./images/corp_group.png" width="60" height="60" alt="image logo"
                     loading="lazy"> </a>
             <div class="offcanvas offcanvas-end" id="demo">
                 <div class="offcanvas-header">
@@ -129,34 +123,54 @@
     </nav>
     <!--end header  -->
 
-   <!-- start get offer -->
-   <div class="get-offer text-center d-flex">
-       <div class="container">
-           <h2 style="color:var(--primary);font-weight: 800;">شكرا لاختيارك  تأمينك للبدأ في إصدار الوثيقة:</h2>
-           <ol class="list-unstyled" style="font-size: 20px;">
-               <li>
-               1- إرفع صورة رخصة السيارة بالاسفل.
-               </li>
-               <li>
-               2- سيقوم أحد ممثلينا بالتواصل معك للمعاينة.
-               </li>
-               <li>
-               3- تصدر الوثيقة خلال يوم عمل بعد المعاينة.
-               </li>
-           </ol>
-<form method="put"    id="id-form" class="">
 
-    <label class="mt-4" for="">اضغط هنا لرفع صورة الرخصه (من الامام)</label>
-    <input type="file" id="faceimg"  name="faceImg" class="form-control form-control-sm w-25 mx-auto d-block">
-    <label class="mt-4" for="">اضغط هنا لرفع صورة الرخصه (من الخلف)</label>
-    <input type="file" id="backimg" name="backImg" class="form-control form-control-sm w-25 mx-auto d-block">
-    <input type="submit" class="btn btn-success w-50 mt-4" value="تأكيد الطلب">
+    <!-- start dashboard -->
+    <div class="dashboard">
+        <div class="container">
+            <div class="table-responsive">
 
+            
+            <table class="table  table-bordered  table-hover">
+                <thead class="table-dark  ">
+                    <tr class="text-center">
+                        <th rowspan="2">الاسم</th>
+                        <th rowspan="2">النوع</th>
+                        <th rowspan="2">رقم الهاتف</th>
+                        <th rowspan="2">الرساله</th>
+                        <th rowspan="2">البريد الالكتروني </th>
+                        <th colspan="4">
+                            تامين طيي افراد
 
-</form>
-       </div>
-   </div>
-   <!-- end get offer -->
+                        </th>
+                        <th colspan="3">تامين طيي شركات</th>
+                    </tr>
+                    <tr>
+                        <td>هل يحتاج اي من الافراد لعلاج شهري </td>
+                        <td>تاريخ ميلاد</td>
+                        <td> الزواجة تاريخ ميلاد</td>
+                        <td>تاريخ ميلاد الابن</td>
+                      
+                        <td>
+                            
+                            عدد الموظفين 
+                            
+                        </td>
+                        <td>
+                            اجمالى عدد افراد الاسر  
+                            
+                        </td>
+                      
+                    </tr>
+                    </thead>
+                <tbody class="table-primary" id="TD">
+                </tbody>
+            </table>
+            
+        </div>
+        </div>
+    </div>
+    <!-- end dashboard -->
+
 
     <!-- start footer -->
     <footer class="footer">
@@ -200,62 +214,69 @@
                         Copyright &copy;
                         <script>document.write(new Date().getFullYear());</script> All rights reserved taamenk
                     </p>
-                    <p class="text-center"><span> powered by <a href="#" target="_blank">ahmed serag</a> </span></p>
+                    <p class="text-center"><span> powered by <a href="#" target="_blank">T2menk</a> </span></p>
                 </div>
             </div>
         </div>
     </footer>
     <!-- End footer -->
-
-
     <script>
-        const offerform= document.getElementById("id-form");
-        
-        
-        var faceimg = document.querySelector('#faceimg');
-        var backimg = document.querySelector('#backimg');
-        
-        offerform.addEventListener('submit',async function(e){
-            e.preventDefault();
-            
-            let formdata=new FormData()
-            console.log(faceimg.files[0]);
-            console.log(backimg.files[0]);
-            formdata.append("faceImg", faceimg.files[0]);
-            formdata.append("backImg", backimg.files[0]);
-          console.log(formdata);
-         
 
-          const formdatasec=Object.fromEntries(formdata);
-          let id="61a639bb2b1e5666209393f1"
-          console.log(formdatasec);
+var bodytable = document.getElementById("TD");
+var email,first_name,last_name;
+var xhr = new XMLHttpRequest();
+var dataAjax = "";
+xhr.onreadystatechange = function () {
+  if (xhr.readyState == 4) {
+    if (xhr.status == 200) {
+      dataAjax = xhr.responseText;
+      var dataparse = JSON.parse(dataAjax);
+      console.log(dataparse);
+      for (var property in dataparse.usersList) {
+        console.log(dataparse.usersList);
     
-            
-                axios.post(`api/v1/carinsurance/${id}`, formdatasec, {
-    headers: {
-      'Content-Type': 'multipart/form-data'
+        name = dataparse.usersList[property].name||"لا يوجد";
+        email = dataparse.usersList[property].email||"لا يوجد";
+        type = dataparse.usersList[property].type||"لا يوجد";
+        phone = dataparse.usersList[property].phone||"لا يوجد";
+        message = dataparse.usersList[property].message||"لا يوجد";
+        chroniccondition = dataparse.usersList[property].chroniccondition||"لا يوجد";
+        Bdate = new Date (dataparse.usersList[property].Bdate)||"لا يوجد";
+        Bdateo = `${Bdate.getDate()},${  Bdate.getMonth()+1},${  Bdate.getFullYear()}`;
+        BdateWife =  new Date (dataparse.usersList[property].BdateWife)||"لا يوجد";
+        BdateWifeo = `${BdateWife.getDate()},${  BdateWife.getMonth()+1},${  BdateWife.getFullYear()}`;
+        BdateSon = new Date ( dataparse.usersList[property].BdateSon)||"لا يوجد";
+        BdateSono = `${BdateSon.getDate()},${  BdateSon.getMonth()+1},${  BdateSon.getFullYear()}`;
+        numberOfEmployee = dataparse.usersList[property].numberOfEmployee||"لا يوجد";
+        numberOfEmployeeFam = dataparse.usersList[property].numberOfEmployeeFam||"لا يوجد";
+        
+     
+        // console.log(new Date(Bdate.toString().split('GMT')[0]+' UTC'.toISOString().split('T')[0]));
+        console.log([Bdate.getDate(), Bdate.getMonth()+1, Bdate.getFullYear()]);
+
+       outdisplaytable(email,name,type,phone,message,chroniccondition,Bdateo,BdateWifeo,BdateSono,numberOfEmployee,numberOfEmployeeFam);
+      }
     }
-}).then(function(response){
-    console.log(response);
-    
-})
-.catch(function(error){
-    console.log(error);
+  }
+};
+xhr.open("Get", "api/v1/users", true);
+xhr.send("");
 
-});
-              
-    
-            
-         
-          }
-          )
-          
-        </script>
-
-
-
-
-
+function outdisplaytable(email,name,type,phone,message,chroniccondition,Bdate,BdateWife,BdateSon,numberOfEmployee,numberOfEmployeeFam){
+  bodytable.innerHTML +=
+  "<td>"+name+"</td>"+ 
+  "<td>"+type+"</td>"+
+  "<td>"+phone+"</td>"+
+  "<td>"+message+"</td>"+
+  "<td>"+email+"</td>"+
+  "<td>"+chroniccondition+"</td>"+
+  "<td>"+Bdate+"</td>"+
+  "<td>"+BdateWife+"</td>"+
+  "<td>"+BdateSon+"</td>"+
+  "<td>"+numberOfEmployee+"</td>"+
+  "<td>"+numberOfEmployeeFam+"</td>" ;
+}
+    </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>

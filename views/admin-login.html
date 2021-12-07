@@ -22,10 +22,6 @@
     <meta property="og:type" content="Service" />
     <meta name="og:postal-code" content="12573" />
     <meta name="og:country-name" content="Egypt" />
-
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="./css/main.css">
@@ -34,10 +30,8 @@
 
 <body>
 
-
-
     <!-- start preloader -->
-    <div class="loader_bg">
+    <div class="loader_bg">.
         <div class="loader"></div>
     </div>
     <!-- end preloader  -->
@@ -52,8 +46,7 @@
             <div class="row">
                 <div class="col">
                     <a style="display: flex; width: 100%;"><i class="fas fa-map-marker-alt m-2"></i> <span>9870 St
-                            Vincent
-                            Place</span></a>
+                            Vincent Place</span></a>
                 </div>
                 <div class="col">
                     <a style="display: flex; width: 100%;" href="tel:+201012370014"><i class="fas fa-phone-alt m-2"></i>
@@ -80,11 +73,12 @@
     </div>
     <!-- end upper bar -->
 
+
     <!-- start header -->
     <nav class="navbar navbar-expand-sm shadow-sm bg-white rounded sticky-top">
         <div class="container">
             <i class="fas fa-bars  fa-2x mt-3 mr-3" data-bs-toggle="offcanvas" data-bs-target="#demo"></i>
-            <a href="/"> <img class="logo-navbar" src="./images/corp_group.png" width="60" height="60" alt="iamage logo"
+            <a href="/"> <img class="logo-navbar" src="./images/corp_group.png" width="60" height="60" alt="image logo"
                     loading="lazy"> </a>
             <div class="offcanvas offcanvas-end" id="demo">
                 <div class="offcanvas-header">
@@ -129,34 +123,42 @@
     </nav>
     <!--end header  -->
 
-   <!-- start get offer -->
-   <div class="get-offer text-center d-flex">
-       <div class="container">
-           <h2 style="color:var(--primary);font-weight: 800;">شكرا لاختيارك  تأمينك للبدأ في إصدار الوثيقة:</h2>
-           <ol class="list-unstyled" style="font-size: 20px;">
-               <li>
-               1- إرفع صورة رخصة السيارة بالاسفل.
-               </li>
-               <li>
-               2- سيقوم أحد ممثلينا بالتواصل معك للمعاينة.
-               </li>
-               <li>
-               3- تصدر الوثيقة خلال يوم عمل بعد المعاينة.
-               </li>
-           </ol>
-<form method="put"    id="id-form" class="">
+    <!-- start login -->
+    <div class="login-page">
+        <div class="container">
+            <div class="box-login">
+                <form class="box-form" action="/" method="get">
 
-    <label class="mt-4" for="">اضغط هنا لرفع صورة الرخصه (من الامام)</label>
-    <input type="file" id="faceimg"  name="faceImg" class="form-control form-control-sm w-25 mx-auto d-block">
-    <label class="mt-4" for="">اضغط هنا لرفع صورة الرخصه (من الخلف)</label>
-    <input type="file" id="backimg" name="backImg" class="form-control form-control-sm w-25 mx-auto d-block">
-    <input type="submit" class="btn btn-success w-50 mt-4" value="تأكيد الطلب">
+                    <div class="box-title">
+                        <h2>Login</h2>
+                    </div>
 
+                    <div class="box-inputs">
 
-</form>
-       </div>
-   </div>
-   <!-- end get offer -->
+                        <div class="inputs-email">
+                            <input type="email" name="email" id="email" class="input" placeholder="Type your e-mail">
+                            <label for="email" class="label-inputs">الاسم :</label>
+                        </div>
+
+                        <div class="inputs-password">
+                            <input type="password" name="password" id="password" class="input"
+                                placeholder="Type your password">
+                            <label for="password" class="label-inputs">كلمة السر :</label>
+                        </div>
+
+                        <div class="box-btn-login mt-5">
+                            <button class="btn-login" type="submit" value="enter">Login</button>
+                        </div>
+                    </div>
+                </form>
+                <div class="hero">
+                    <p>اهلا بك ف</p>
+                    <h1>تأمينك<h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end login -->
 
     <!-- start footer -->
     <footer class="footer">
@@ -200,62 +202,12 @@
                         Copyright &copy;
                         <script>document.write(new Date().getFullYear());</script> All rights reserved taamenk
                     </p>
-                    <p class="text-center"><span> powered by <a href="#" target="_blank">ahmed serag</a> </span></p>
+                    <p class="text-center"><span> powered by <a href="#" target="_blank">T2menk</a> </span></p>
                 </div>
             </div>
         </div>
     </footer>
     <!-- End footer -->
-
-
-    <script>
-        const offerform= document.getElementById("id-form");
-        
-        
-        var faceimg = document.querySelector('#faceimg');
-        var backimg = document.querySelector('#backimg');
-        
-        offerform.addEventListener('submit',async function(e){
-            e.preventDefault();
-            
-            let formdata=new FormData()
-            console.log(faceimg.files[0]);
-            console.log(backimg.files[0]);
-            formdata.append("faceImg", faceimg.files[0]);
-            formdata.append("backImg", backimg.files[0]);
-          console.log(formdata);
-         
-
-          const formdatasec=Object.fromEntries(formdata);
-          let id="61a639bb2b1e5666209393f1"
-          console.log(formdatasec);
-    
-            
-                axios.post(`api/v1/carinsurance/${id}`, formdatasec, {
-    headers: {
-      'Content-Type': 'multipart/form-data'
-    }
-}).then(function(response){
-    console.log(response);
-    
-})
-.catch(function(error){
-    console.log(error);
-
-});
-              
-    
-            
-         
-          }
-          )
-          
-        </script>
-
-
-
-
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
