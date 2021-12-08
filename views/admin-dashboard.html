@@ -130,6 +130,7 @@
     <!-- start dashboard -->
     <div class="dashboard">
         <div class="container">
+
             <div class="table-responsive">
 
             
@@ -173,6 +174,38 @@
            
             
         </div>
+            <div class="table-responsive">
+
+            
+    <table class="table table-fluid  table-hover table-striped table-bordered table-sm"  id="myTable" width="100%" >
+
+
+                <thead class="table-info  ">
+                   
+                        <th>الاسم </th>
+                        <th >رقم الموبايل </th>
+                        
+                        <th >
+                            
+                            الماركة
+                            
+                        </th>
+                        <th >
+                            الموديل                            
+                        </th>
+                        <th > السنة</th>
+                        <th >سعر السيارة</th>
+                        <th >عمر المالك</th>
+                      
+                    </tr>
+                    </thead>
+                <tbody class="table-success" id="TD1">
+                </tbody>
+            </table>
+           
+            
+        </div>
+
         </div>
     </div>
 
@@ -230,19 +263,20 @@
     <script>
 
 var bodytable = document.getElementById("TD");
+var bodytable1 = document.getElementById("TD1");
 var email,name,type,message,chroniccondition,Bdate,Bdateo,BdateWife,BdateWifeo,BdateSon,BdateSono,numberOfEmployee,numberOfEmployeeFam;
+var ownerName,ownerage,ownerphone,caryear,carprice,carmodel,carbrand;
 var xhr = new XMLHttpRequest();
+var xhr1 = new XMLHttpRequest();
 var dataAjax = "";
+var dataAjax1 = "";
 
 xhr.onreadystatechange = function () {
   if (xhr.readyState == 4) {
     if (xhr.status == 200) {
       dataAjax = xhr.responseText;
       var dataparse = JSON.parse(dataAjax);
-      console.log(dataparse);
       for (var property in dataparse.usersList) {
-        console.log(dataparse.usersList);
-    
         name = dataparse.usersList[property].name||"لا يوجد";
         email = dataparse.usersList[property].email||"لا يوجد";
         type = dataparse.usersList[property].type||"لا يوجد";
@@ -258,17 +292,39 @@ xhr.onreadystatechange = function () {
         numberOfEmployee = dataparse.usersList[property].numberOfEmployee||"لا يوجد";
         numberOfEmployeeFam = dataparse.usersList[property].numberOfEmployeeFam||"لا يوجد";
         
-     
-        // console.log(new Date(Bdate.toString().split('GMT')[0]+' UTC'.toISOString().split('T')[0]));
-        console.log([Bdate.getDate(), Bdate.getMonth()+1, Bdate.getFullYear()]);
-
-       outdisplaytable(email,name,type,phone,message,chroniccondition,Bdateo,BdateWifeo,BdateSono,numberOfEmployee,numberOfEmployeeFam);
-      }
+        
+        
+        outdisplaytable(email,name,type,phone,message,chroniccondition,Bdateo,BdateWifeo,BdateSono,numberOfEmployee,numberOfEmployeeFam);
     }
-  }
+}
+}
+};
+
+
+xhr1.onreadystatechange = function () {
+    if (xhr1.readyState == 4) {
+        if (xhr1.status == 200) {
+            dataAjax1 = xhr1.responseText;
+            var dataparse1 = JSON.parse(dataAjax1);
+            console.log(dataparse1);
+            for (var property in dataparse1.carsList) {
+                ownerName = dataparse1.carsList[property].name||"لا يوجد";
+                ownerphone = dataparse1.carsList[property].phone||"لا يوجد";
+                ownerage = dataparse1.carsList[property].ownerage||"لا يوجد";
+                caryear = dataparse1.carsList[property].caryear||"لا يوجد";
+                carprice = dataparse1.carsList[property].carprice||"لا يوجد";
+                carmodel = dataparse1.carsList[property].carmodel||"لا يوجد";
+                carbrand = dataparse1.carsList[property].carbrand||"لا يوجد";
+                
+                outdisplaytable1(ownerName,ownerage,ownerphone,caryear,carprice,carmodel,carbrand);
+            }
+        }
+    }
 };
 xhr.open("Get", "api/v1/users", true);
+xhr1.open("Get", "api/v1/carinsurance", true);
 xhr.send("");
+xhr1.send("");
 
 function outdisplaytable(email,name,type,phone,message,chroniccondition,Bdate,BdateWife,BdateSon,numberOfEmployee,numberOfEmployeeFam){
   bodytable.innerHTML +=
@@ -284,23 +340,26 @@ function outdisplaytable(email,name,type,phone,message,chroniccondition,Bdate,Bd
   "<td>"+numberOfEmployee+"</td>"+
   "<td>"+numberOfEmployeeFam+"</td>" ;
 }
+function outdisplaytable1(ownerName,ownerage,ownerphone,caryear,carprice,carmodel,carbrand)
+{
+  bodytable1.innerHTML +=
+  "<td>"+ownerName+"</td>"+ 
+  "<td>"+ownerphone+"</td>"+
+  "<td>"+carbrand+"</td>"+
+  "<td>"+carmodel+"</td>"+
+  "<td>"+caryear+"</td>"+
+  "<td>"+carprice+"</td>"+
+  "<td>"+ownerage+"</td>" ;
+}
 
     </script>
-    <script>
-        $(document).ready( function () {
-        $('#myTable').DataTable();
-    } );
-        </script>
+ 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>.
 
-  <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" ></script>
 
-  <script
-  src="http://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
+
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
