@@ -50,6 +50,7 @@ app.use('/api/v1/carinsurance', carinsurance );
 
 
 // handel view 
+<<<<<<< HEAD
 app.get('/',(req, res) => {
   res.sendFile(path.join(__dirname,"/views/index.html"))
 })
@@ -65,6 +66,8 @@ app.get('/showoffer',(req, res) => {
 app.get('/getoffer',(req, res) => {
   res.sendFile(path.join(__dirname,"/views/getoffer.html"))
 })
+=======
+>>>>>>> 7f23202 (view)
 app.get('/home',(req, res) => {
   res.sendFile(path.join(__dirname,"/views/index.html"))
 })
@@ -72,6 +75,7 @@ app.get('/contactus',(req, res) => {
   res.sendFile(path.join(__dirname,"/views/contactus.html"))
 })
 
+<<<<<<< HEAD
 app.get('/whoUs',(req, res) => {
   res.sendFile(path.join(__dirname,"/views/3an-aman-lek.html"));
 })
@@ -115,6 +119,8 @@ app.get('/termsAndCondition',(req, res) => {
   res.sendFile(path.join(__dirname,"/views/al4rot-we-alafkam.html"));
 })
 
+=======
+>>>>>>> 7f23202 (view)
 // Handle any other route
 
     app.all('*', (req, res, next) => {

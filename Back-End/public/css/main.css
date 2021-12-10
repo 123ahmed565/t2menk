@@ -3,10 +3,15 @@
 
 
 :root {
+<<<<<<< HEAD
   /* --primary: #DAA520; */
   /* --secondary: #CD5C5C; */
   --primary:#6982a2;
   --secondary:#f3d6b1;
+=======
+  --primary: #DAA520;
+  --secondary: #CD5C5C;
+>>>>>>> 7f23202 (view)
 }
 
 a {
@@ -1286,6 +1291,7 @@ input{
 
 
 
+<<<<<<< HEAD
 .submit{
   background-color: var(--primary);
   color: rgb(255, 255, 255);
@@ -1495,6 +1501,9 @@ input{
     min-width: 310px;
   }
 }
+=======
+
+>>>>>>> 7f23202 (view)
 
 
 

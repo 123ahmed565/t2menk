@@ -75,5 +75,8 @@ var swiper = new Swiper(".mySwiper", {
   },
 });
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 7f23202 (view)
